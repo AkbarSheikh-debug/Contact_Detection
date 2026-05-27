@@ -1,27 +1,51 @@
 # Python
 __pycache__/
 *.pyc
+*.pyo
 
-# Models
+# Model weights (large binary files)
 *.pth
 *.pkl
+*.pt
+*.onnx
+*.h5
 
-# Outputs
+# Checkpoint directory content (keep the directory, ignore the weights)
+checkpoints/*.pth
+checkpoints/*.pkl
+
+# Audio files (large)
+*.wav
+*.mp3
+
+# Output directories (generated results)
 outputs/
 new_outputs/
 FX_Outputs/
 
-# Videos
+# Video outputs
 *.mp4
 
-# Images
+# Image outputs
 *.png
 *.jpg
 *.jpeg
+*.gif
+*.bmp
 
-# Claude
+# Claude Code session files
 .claude/
 
-# Temp
+# Temp / scratch
 tmp/
 temp/
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
