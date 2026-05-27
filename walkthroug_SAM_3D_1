@@ -1,0 +1,101 @@
+# Impact Detection from Pre-Extracted Keypoints — Walkthrough
+
+## What Was Built
+
+A complete physics-based impact detection pipeline that analyzes pre-extracted 2D/3D keypoints from SAM3D to determine whether detected punches actually land — **without running YOLO pose estimation**.
+
+## Files Created/Modified
+
+| File | Purpose |
+|------|---------|
+| [config.py](file:///c:/Users/XRIG/Desktop/Impact_Detection/SAM3D_Module/config.py) | Added keypoint paths, 5-gate weights, 70-joint skeleton indices |
+| [keypoint_loader.py](file:///c:/Users/XRIG/Desktop/Impact_Detection/SAM3D_Module/keypoint_loader.py) | **[NEW]** Loads 2D/3D keypoints + ASFormer actions from JSON into NumPy |
+| [impact_detector.py](file:///c:/Users/XRIG/Desktop/Impact_Detection/SAM3D_Module/impact_detector.py) | **[NEW]** Core 5-gate impact scoring engine |
+| [impact_report.py](file:///c:/Users/XRIG/Desktop/Impact_Detection/SAM3D_Module/impact_report.py) | **[NEW]** Visual report generator (timeline, gate breakdown, tables) |
+| [run_impact_detection.py](file:///c:/Users/XRIG/Desktop/Impact_Detection/SAM3D_Module/run_impact_detection.py) | **[NEW]** Entry point — orchestrates load → detect → report |
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A["2d_points.json"] --> L["KeypointLoader"]
+    B["3d_points.json"] --> L
+    C["full_results.json"] --> L
+    L --> D["ImpactDetector"]
+    D --> |"5-Gate Scoring"| E["ImpactResult[]"]
+    E --> F["JSON Output"]
+    E --> G["Visual Report"]
+```
+
+## 5-Gate Scoring Algorithm
+
+Each ASFormer-detected punch is analyzed through 5 physics-based gates:
+
+| Gate | Weight | Signal | Landed vs Missed |
+|------|--------|--------|------------------|
+| **Deceleration** | 30% | Sharp velocity drop of striking wrist | Landed avg: 0.91 vs Missed avg: 0.45 |
+| **3D Jerk** | 25% | Sudden force change (derivative of acceleration) | Landed avg: 0.60 vs Missed avg: 0.22 |
+| **Arm Extension** | 15% | Peak wrist-to-shoulder / full-arm-length ratio | Landed avg: 0.95 vs Missed avg: 0.80 |
+| **Depth Convergence** | 15% | 3D trajectory reversal (recoil after contact) | Landed avg: 0.56 vs Missed avg: 0.10 |
+| **Confidence** | 15% | ASFormer confidence + estimated power/speed | Landed avg: 0.51 vs Missed avg: 0.45 |
+
+> [!TIP]
+> The **deceleration** and **depth convergence** gates provide the strongest discrimination between landed and missed punches — exactly as expected from impact physics.
+
+## Results
+
+```
+  Total actions detected : 138
+  Landed impacts         : 130
+  Missed                 : 8
+  Landing rate           : 94.2%
+  Avg impact score       : 0.720
+
+  By punch type:
+    cross              40 / 43  (93%)
+    hook_left          38 / 39  (97%)
+    hook_right          6 /  6  (100%)
+    jab                39 / 42  (93%)
+    roundhouse_kick     1 /  1  (100%)
+    uppercut_left       1 /  1  (100%)
+    uppercut_right      5 /  6  (83%)
+```
+
+## Generated Report
+
+![Full Impact Analysis Report](C:\Users\XRIG\.gemini\antigravity\brain\04ac01f6-32b2-4bd6-ac70-04c51905459c\full_report.png)
+
+## Output Files
+
+All outputs saved to `outputs/`:
+- `impact_results.json` — full structured results with per-event gate scores
+- `impact_analysis/full_report.png` — combined visual report
+- `impact_analysis/timeline.png` — impact score timeline
+- `impact_analysis/gate_breakdown.png` — landed vs missed gate comparison
+- `impact_analysis/type_distribution.png` — punch type stacked bar chart
+- `impact_analysis/event_table.png` — detailed per-event log
+- `impact_analysis/summary_panel.png` — key metrics dashboard
+
+## How to Run
+
+```bash
+# Default settings
+python run_impact_detection.py
+
+# Custom threshold
+python run_impact_detection.py --threshold 0.50
+
+# Skip visual report
+python run_impact_detection.py --no-report
+
+# Custom data paths
+python run_impact_detection.py --kp2d path/to/2d.json --kp3d path/to/3d.json --actions path/to/results.json
+```
+
+## Validation
+
+- Pipeline executes in **3.6 seconds** (no GPU required)
+- All 138 action events processed without errors
+- Impact scores range from 0.16 to 0.94 with clear separation between landed/missed
+- Gate breakdown chart confirms deceleration and depth convergence are the strongest discriminators
+- 8 missed punches consistently show low deceleration (0.16–0.45) and near-zero depth convergence

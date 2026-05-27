@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+
+# Models
+*.pth
+*.pkl
+
+# Outputs
+outputs/
+new_outputs/
+FX_Outputs/
+
+# Videos
+*.mp4
+
+# Images
+*.png
+*.jpg
+*.jpeg
+
+# Claude
+.claude/
+
+# Temp
+tmp/
+temp/

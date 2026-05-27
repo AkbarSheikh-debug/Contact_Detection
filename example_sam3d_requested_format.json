@@ -1,0 +1,265 @@
+{
+  "_format_version": "2.0",
+  "_description": "Requested SAM3D output format for reliable impact detection. New fields marked with [NEW]. See NOTE_FOR_TEAMMATE.md for full explanation.",
+
+  "0": [
+    {
+      "track_id": 0,
+      "frame": 480,
+      "_frame_note": "Non-contact frame — fighters are apart. Both persons at ~3.5m depth from camera.",
+
+      "bbox": [1100.0, 210.0, 1420.0, 560.0],
+      "frame_dims": {
+        "original_width": 1920,
+        "original_height": 1080,
+        "resized_width": 1920,
+        "resized_height": 1080
+      },
+      "focal_length": 983.272705078125,
+      "pred_cam_t": [0.48, 1.12, 3.51],
+      "normalization_root": [0.006, -0.901, 0.002],
+      "normalization_scale": 1.414,
+
+      "shared_space_coords": [
+        [0.98, 0.97, 3.47],  [1.01, 1.02, 3.48],  [0.95, 1.01, 3.46],
+        [1.03, 1.07, 3.57],  [0.88, 1.07, 3.53],  [1.10, 0.72, 3.52],
+        [0.82, 0.71, 3.50],  [1.19, 0.33, 3.62],  [0.73, 0.31, 3.61],
+        [1.02, 0.49, 3.91],  [0.85, 0.50, 3.93],  [1.07, 0.08, 3.55],
+        [0.82, 0.07, 3.55],  [1.10, -0.41, 3.60], [0.77, -0.42, 3.58],
+        [1.12, -0.87, 3.65], [0.79, -0.88, 3.63],
+        "... (joints 17-69 continue here — same format [x, y, z]) ..."
+      ],
+
+      "normalized_coords": [
+        [0.18, -0.36, -0.26], [0.19, -0.39, -0.25], [0.15, -0.39, -0.28],
+        "... (70 joints total) ..."
+      ],
+
+      "focal_normalized_coords": [
+        [0.38, -0.77, -0.57], [0.41, -0.85, -0.54], [0.33, -0.84, -0.59],
+        "... (70 joints total) ..."
+      ],
+
+      "[NEW] world_coords": [
+        [0.50, 1.72, 3.50],  [0.52, 1.65, 3.50],  [0.47, 1.65, 3.50],
+        [0.53, 1.58, 3.51],  [0.43, 1.58, 3.50],  [0.58, 1.38, 3.50],
+        [0.39, 1.37, 3.50],  [0.64, 1.02, 3.51],  [0.33, 1.01, 3.51],
+        [0.61, 1.18, 3.52],  [0.38, 1.17, 3.52],  [0.60, 0.95, 3.50],
+        [0.37, 0.94, 3.50],  [0.61, 0.52, 3.50],  [0.36, 0.51, 3.50],
+        [0.62, 0.08, 3.50],  [0.37, 0.07, 3.50],
+        "... (joints 17-69 continue here) ..."
+      ],
+      "_world_coords_note": "Ground-plane normalized. Y=0 is the ring floor. Both persons share the same world reference frame. Z values are now consistent across persons.",
+
+      "[NEW] keypoint_conf": [
+        0.96, 0.95, 0.94, 0.88, 0.86,
+        0.92, 0.91, 0.85, 0.83, 0.79,
+        0.81, 0.90, 0.89, 0.78, 0.76,
+        0.61, 0.59,
+        "... (70 values total, one per joint) ..."
+      ],
+      "_keypoint_conf_note": "Confidence [0.0-1.0] per joint. Use only joints with conf > 0.5 for distance calculations. Low confidence = occluded or poorly estimated joint.",
+
+      "[NEW] world_coords_reliable": true,
+      "_world_coords_reliable_note": "False when ground plane detection fails (e.g., both feet are off-screen). Fall back to shared_space_coords if false."
+    },
+
+    {
+      "track_id": 0,
+      "frame": 620,
+      "_frame_note": "CONTACT FRAME — Person 0 left wrist is hitting Person 1 head. world_coords Z values for both persons are now ~3.50m (consistent). In old shared_space_coords they differed by 0.30m (unreliable).",
+
+      "bbox": [1247.0, 225.0, 1560.0, 539.0],
+      "frame_dims": {
+        "original_width": 1920,
+        "original_height": 1080,
+        "resized_width": 1920,
+        "resized_height": 1080
+      },
+      "focal_length": 983.272705078125,
+      "pred_cam_t": [0.595, 1.142, 1.871],
+      "normalization_root": [0.0055, -0.905, 0.0022],
+      "normalization_scale": 1.414,
+
+      "shared_space_coords": [
+        [0.850, 0.268, 1.502], [0.870, 0.322, 1.519], [0.816, 0.314, 1.484],
+        [0.882, 0.371, 1.556], [0.753, 0.354, 1.529], [0.803, 0.021, 1.567],
+        [0.545, 0.012, 1.542], [0.719, -0.265, 1.638], [0.476, -0.275, 1.600],
+        [0.637, -0.219, 1.937], [0.581, -0.064, 1.832], [0.769, -0.419, 1.556],
+        [0.570, -0.421, 1.556], [0.804, -0.782, 1.574], [0.535, -0.784, 1.571],
+        [0.819, -1.113, 1.568], [0.523, -1.116, 1.561],
+        "... (joints 17-69 continue here) ..."
+      ],
+      "_shared_space_coords_problem": "Person 0 wrist Z=1.94m, Person 1 head Z=1.83m — these are independently estimated depths, so the 0.11m Z gap does NOT necessarily mean physical separation. This is the core problem being fixed by world_coords.",
+
+      "normalized_coords": [
+        [0.176, -0.357, -0.262], [0.191, -0.395, -0.250], [0.153, -0.389, -0.275],
+        "... (70 joints total) ..."
+      ],
+
+      "focal_normalized_coords": [
+        [0.380, -0.770, -0.566], [0.411, -0.852, -0.540], [0.329, -0.840, -0.594],
+        "... (70 joints total) ..."
+      ],
+
+      "[NEW] world_coords": [
+        [0.42, 1.71, 3.50],  [0.44, 1.64, 3.50],  [0.40, 1.64, 3.50],
+        [0.45, 1.57, 3.51],  [0.37, 1.56, 3.50],  [0.48, 1.37, 3.50],
+        [0.30, 1.36, 3.50],  [0.53, 1.01, 3.51],  [0.25, 1.00, 3.51],
+        [0.31, 1.61, 3.50],  [0.29, 1.18, 3.51],  [0.50, 0.94, 3.50],
+        [0.31, 0.93, 3.50],  [0.51, 0.50, 3.50],  [0.30, 0.49, 3.50],
+        [0.52, 0.06, 3.50],  [0.29, 0.05, 3.50],
+        "... (joints 17-69 continue here) ..."
+      ],
+      "_world_coords_note": "Joint 9 (left wrist) = [0.31, 1.61, 3.50]. Person 1 head = [0.29, 1.60, 3.50]. 3D distance = 0.03m = true contact confirmed. This is only possible because both persons share the same world coordinate frame.",
+
+      "[NEW] keypoint_conf": [
+        0.94, 0.92, 0.91, 0.86, 0.83,
+        0.89, 0.88, 0.82, 0.80, 0.91,
+        0.78, 0.87, 0.86, 0.74, 0.72,
+        0.58, 0.55,
+        "... (70 values total) ..."
+      ],
+
+      "[NEW] world_coords_reliable": true
+    }
+  ],
+
+  "1": [
+    {
+      "track_id": 1,
+      "frame": 480,
+      "_frame_note": "Non-contact frame — Person 1 is standing guard, wrists raised.",
+
+      "bbox": [1477.0, 209.0, 1686.0, 587.0],
+      "frame_dims": {
+        "original_width": 1920,
+        "original_height": 1080,
+        "resized_width": 1920,
+        "resized_height": 1080
+      },
+      "focal_length": 983.272705078125,
+      "pred_cam_t": [1.42, 0.98, 2.73],
+      "normalization_root": [0.004, -0.881, 0.001],
+      "normalization_scale": 1.312,
+
+      "shared_space_coords": [
+        [1.563, 0.684, 2.732], [1.542, 0.716, 2.685], [1.591, 0.736, 2.722],
+        [1.568, 0.696, 2.581], [1.686, 0.742, 2.669], [1.589, 0.420, 2.761],
+        [1.364, 0.408, 2.744], [1.644, 0.100, 2.808], [1.310, 0.089, 2.786],
+        [1.793, 0.040, 2.692], [1.819, 0.092, 2.830], [1.603, -0.067, 2.770],
+        [1.372, -0.073, 2.767], [1.627, -0.492, 2.780], [1.348, -0.499, 2.771],
+        [1.638, -0.892, 2.785], [1.337, -0.899, 2.783],
+        "... (joints 17-69 continue here) ..."
+      ],
+
+      "[NEW] world_coords": [
+        [1.20, 1.73, 3.50],  [1.18, 1.66, 3.50],  [1.23, 1.66, 3.50],
+        [1.17, 1.59, 3.50],  [1.29, 1.59, 3.50],  [1.22, 1.39, 3.50],
+        [0.99, 1.38, 3.50],  [1.27, 1.03, 3.50],  [0.94, 1.02, 3.50],
+        [1.38, 1.19, 3.51],  [1.41, 1.17, 3.51],  [1.24, 0.96, 3.50],
+        [1.00, 0.95, 3.50],  [1.25, 0.52, 3.50],  [1.00, 0.51, 3.50],
+        [1.26, 0.07, 3.50],  [0.99, 0.06, 3.50],
+        "... (joints 17-69 continue here) ..."
+      ],
+
+      "[NEW] keypoint_conf": [
+        0.95, 0.93, 0.94, 0.87, 0.88,
+        0.91, 0.90, 0.84, 0.83, 0.80,
+        0.82, 0.89, 0.88, 0.77, 0.75,
+        0.60, 0.58,
+        "... (70 values total) ..."
+      ],
+
+      "[NEW] world_coords_reliable": true
+    },
+
+    {
+      "track_id": 1,
+      "frame": 620,
+      "_frame_note": "CONTACT FRAME — Person 0 left wrist is hitting this person's head. In world_coords, both persons are at Z=3.50m (aligned). 3D contact distance = 0.03m.",
+
+      "bbox": [1050.0, 198.0, 1380.0, 562.0],
+      "frame_dims": {
+        "original_width": 1920,
+        "original_height": 1080,
+        "resized_width": 1920,
+        "resized_height": 1080
+      },
+      "focal_length": 983.272705078125,
+      "pred_cam_t": [0.481, 1.041, 1.832],
+      "normalization_root": [0.003, -0.895, 0.001],
+      "normalization_scale": 1.389],
+
+      "shared_space_coords": [
+        [0.572, -0.055, 1.833], [0.556, -0.021, 1.801], [0.598, -0.023, 1.842],
+        [0.551, 0.001, 1.757],  [0.629, 0.005, 1.799],  [0.558, -0.320, 1.887],
+        [0.361, -0.329, 1.870], [0.590, -0.588, 1.948], [0.330, -0.604, 1.920],
+        [0.633, -0.768, 2.010], [0.323, -0.773, 1.989], [0.572, -0.622, 1.896],
+        [0.383, -0.625, 1.888], [0.593, -1.001, 1.908], [0.362, -1.005, 1.901],
+        [0.600, -1.360, 1.914], [0.355, -1.363, 1.908],
+        "... (joints 17-69 continue here) ..."
+      ],
+      "_shared_space_coords_problem": "Person 1 head Z=1.83m vs Person 0 wrist Z=1.94m — 0.11m Z gap from independent depth estimation. In world_coords this gap disappears.",
+
+      "[NEW] world_coords": [
+        [0.29, 1.60, 3.50],  [0.28, 1.53, 3.50],  [0.31, 1.53, 3.50],
+        [0.27, 1.46, 3.50],  [0.33, 1.46, 3.50],  [0.30, 1.25, 3.50],
+        [0.12, 1.24, 3.50],  [0.33, 0.89, 3.50],  [0.09, 0.88, 3.50],
+        [0.38, 0.72, 3.51],  [0.06, 0.71, 3.51],  [0.31, 0.67, 3.50],
+        [0.13, 0.66, 3.50],  [0.32, 0.24, 3.50],  [0.12, 0.23, 3.50],
+        [0.33, -0.19, 3.50], [0.11, -0.20, 3.50],
+        "... (joints 17-69 continue here) ..."
+      ],
+      "_world_coords_key_value": "Person 1 head (kp0) = [0.29, 1.60, 3.50]. Person 0 left wrist (kp9) = [0.31, 1.61, 3.50]. 3D distance = sqrt((0.02)^2 + (0.01)^2 + (0.00)^2) = 0.022m. This is true contact.",
+
+      "[NEW] keypoint_conf": [
+        0.93, 0.91, 0.92, 0.85, 0.86,
+        0.88, 0.87, 0.81, 0.79, 0.77,
+        0.79, 0.86, 0.85, 0.72, 0.70,
+        0.56, 0.54,
+        "... (70 values total) ..."
+      ],
+
+      "[NEW] world_coords_reliable": true
+    }
+  ],
+
+  "[NEW] contact_events": [
+    {
+      "_section_note": "Pre-computed contact detection results per frame. Eliminates need to run impact detection manually from coordinates.",
+      "frame": 620,
+      "time_sec": 24.80,
+      "striker_id": 0,
+      "receiver_id": 1,
+      "striker_keypoint": 9,
+      "striker_body_part": "left_wrist",
+      "receiver_keypoint": 0,
+      "receiver_body_part": "head",
+      "contact_prob": 0.91,
+      "contact_3d_distance_m": 0.022,
+      "contact_region": "head",
+      "_contact_region_note": "head / torso / left_arm / right_arm / left_leg / right_leg. Distinguishes real punch-to-head from blocked punch-to-arm (guard)."
+    },
+    {
+      "frame": 621,
+      "time_sec": 24.84,
+      "striker_id": 0,
+      "receiver_id": 1,
+      "striker_keypoint": 9,
+      "striker_body_part": "left_wrist",
+      "receiver_keypoint": 0,
+      "receiver_body_part": "head",
+      "contact_prob": 0.87,
+      "contact_3d_distance_m": 0.063,
+      "contact_region": "head"
+    }
+  ],
+
+  "[NEW] inter_person_depth_offsets": {
+    "_description": "Per-frame Z-offset correction: how much to add to Person 1's shared_space_coords Z to align with Person 0's depth scale. Useful if world_coords is not available.",
+    "480": 0.28,
+    "620": 0.11,
+    "621": 0.10
+  }
+}
