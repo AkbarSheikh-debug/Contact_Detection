@@ -35,6 +35,18 @@ FX_Outputs/
 
 # Claude Code session files
 .claude/
+CLAUDE.md
+.cursor/
+.aider*
+
+# Internal docs / notes (not for the public code repo)
+docs/
+
+# Local generated sample/clip folders
+sound_samples/
+sound_samples_av/
+action_clips/
+impact_dataset/
 
 # Temp / scratch
 tmp/

@@ -106,15 +106,11 @@ VIZ_COLORS = {
 IMPACT_FLASH_DURATION = 6            # frames to show impact flash
 
 # ─── Pre-extracted Keypoint Paths ─────────────────────────────────────────────
-KEYPOINTS_2D_PATH = (
-    r"C:\Users\XRIG\Downloads\for_impact_detection_experiment_2 (1)"
-    r"\for_impact_detection_experiment_2\2d_points.json"
-)
-KEYPOINTS_3D_PATH = (
-    r"C:\Users\XRIG\Downloads\for_impact_detection_experiment_2 (1)"
-    r"\for_impact_detection_experiment_2\3d_points.json"
-)
-ACTIONS_PATH = (
+_DATA = r"/home/jake/Downloads/for_impact_detection_experiment_2"
+KEYPOINTS_2D_PATH = os.path.join(_DATA, "2d_points.json")
+KEYPOINTS_3D_PATH = os.path.join(_DATA, "3d_points.json")
+ACTIONS_PATH = os.path.join(_DATA, "full_results.json")
+_LEGACY_ACTIONS_PATH = (
     r"C:\Users\XRIG\Downloads\for_impact_detection_experiment_2 (1)"
     r"\for_impact_detection_experiment_2\full_results.json"
 )

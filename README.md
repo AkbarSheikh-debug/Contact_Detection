@@ -6,6 +6,8 @@ A research pipeline for automatically detecting whether punches and kicks land i
 
 ## Table of Contents
 
+> **New (May 2026):** [⚠️ Data Audit of the `world_coords` export](#️-data-audit-may-2026-the-new-world_coords-sam3d-export) · [New Methods & Roadmap](#new-methods--roadmap-20242025-literature) · [Phase 4 — `fusion_v8.py`](#phase-4--region-aware-pixel-space-fusion-fusion_v8py) · [Phase 5 — SAM+Depth+Audio data ceiling](#phase-5--sam--depth--audio-the-data-ceiling-conclusive) · [**Planned: Learned Temporal Impact Model**](#planned-approach--learned-temporal-impact-model-asformer-windowed-clips)
+
 1. [Project Overview](#project-overview)
 2. [Research Problem](#research-problem)
 3. [Data Pipeline](#data-pipeline)
@@ -42,6 +44,205 @@ An upstream system (ASFormer action segmentation) already detects when punches a
 - **Machine learning classifiers** — Logistic Regression, Gradient Boosting, XGBoost trained on gate scores
 
 The project is adapted from **Pi-HOC** (Pairwise 3D Human-Object Contact Estimation, arXiv:2604.12923).
+
+---
+
+## ⚠️ Data Audit (May 2026): The New `world_coords` SAM3D Export
+
+A new SAM3D export was delivered (`sam3d_with_world_coords/`) that **added the three
+fields requested in [NOTE_FOR_TEAMMATE.md](NOTE_FOR_TEAMMATE.md)**: `world_coords`,
+`keypoint_conf`, `world_coords_reliable`, and a top-level `contact_events` list.
+
+Before trusting any of them, we ran a hard audit ([diagnose_world_coords.py](diagnose_world_coords.py)).
+The fields were *added in name* but **the underlying problems were not fixed**:
+
+| New field | Audit result | Verdict |
+|---|---|---|
+| `world_coords` | Cross-person head-Z gap: **median 1.03 m, p90 7.71 m, max 121.97 m**; 51.2% of frames > 1 m apart | ❌ **Still broken** — same per-person independent depth as `shared_space_coords`. Do **not** use for cross-person 3D distance. |
+| `world_coords_reliable` | `True` on **100%** of frames, including the 122 m phantom-depth ones | ❌ Meaningless flag |
+| `keypoint_conf` | mean 0.9999, only **0.06%** of values < 0.99 | ❌ Constant placeholder — cannot gate occluded wrists |
+| `contact_events` | 139 events, `contact_prob` 0.003–1.0, sane `contact_3d_distance_m` (0.016–0.150 m), region labels (head/torso/arm) | ⚠️ **Usable** signal, but see the alignment problem below |
+
+**The decisive problem — candidate coverage.** The 31 ground-truth impacts are covered by:
+
+- ASFormer **actions**: **30/31** at ±12 frames (31/31 at ±25) ✅
+- SAM3D **`contact_events`**: only **5/31** at ±12 frames (12/31 at ±25) ❌
+
+So `contact_events` cannot be the *candidate set* (it misses ~84% of real impacts); it can
+only be a weak scoring prior. ASFormer actions remain the right candidate set.
+
+**The honest conclusion.** With the signals available *without a GPU/SAM checkpoint*, no single
+signal separates landed from missed punches on this data. Measured GT-vs-non-GT separation per
+gate (positive = discriminative):
+
+```
+gap=-0.029  ce_prob=-0.072  region=-0.008  decel=-0.023
+react=+0.080  approach=+0.081  audio=-0.009  conf=+0.028   FUSED=-0.010
+```
+
+The fused score is essentially **uncorrelated with ground truth** (−0.010). This is consistent
+with the original project finding that **SAM mask overlap was the only strong signal**
+(learned coefficient 3.25× over everything else). SAM/SAM2/depth models require a GPU + checkpoint
+that this environment does not have — so the realistic next steps below are about restoring a
+*geometrically valid* contact signal, not tuning the weak ones.
+
+---
+
+## New Methods & Roadmap (2024–2025 Literature)
+
+The root cause across every approach is the same: **there is no geometrically consistent 3D
+representation of where both fighters are at the same instant** (per-person independent depth →
+phantom 0.3–122 m offsets). The literature points to concrete fixes:
+
+| Priority | Method | What it fixes | Cost | Reference |
+|---|---|---|---|---|
+| **1** | **Video Depth Anything** (CVPR'25) — one scene-wide, temporally-consistent depth map per frame; replace each keypoint's broken per-person Z with the depth-map value at its (u,v) pixel | The cross-person depth bug, directly. Both fighters share one depth map ⇒ relative depth is valid by construction | GPU + model download; ~50 lines to integrate | [arXiv:2501.12375](https://arxiv.org/abs/2501.12375) |
+| **2** | **SAM2 mask-IoU contact (GRAZE)** — track the striker's glove mask and the receiver's head/torso mask across frames; contact = mask IoU > τ. Pixel-space, **no 3D at all** | Replaces the single-frame bbox-silhouette SAM gate with a temporally-consistent, tightly-fitted overlap | GPU + SAM2 | GRAZE [arXiv:2604.01383](https://arxiv.org/abs/2604.01383); SAM2 [arXiv:2408.00714](https://arxiv.org/abs/2408.00714) |
+| **3** | **VolumetricSMPL SDF proximity** (ICCV'25) — fit SMPL per fighter, query signed-distance of striker hand vertices vs receiver body surface; gives **contact region** (head/torso/arm) ⇒ blocked-vs-landed | Robust to keypoint noise; the only principled blocked-punch filter | GPU; 1 pip + 1 line | [arXiv:2506.23236](https://arxiv.org/abs/2506.23236) |
+| **4** | **Multi-HMR + DTO** (ECCV'24 / Nov'25) — multi-person mesh recovery in a *shared* camera frame; DTO enforces metric scale across people | Full SAM3D backend replacement that removes the depth bug at the source | GPU | [Multi-HMR 2402.14654](https://arxiv.org/abs/2402.14654), [DTO 2511.13282](https://arxiv.org/abs/2511.13282) |
+| **5** | **DECO** (ICCV'23) — dense vertex-level contact from RGB; auto-label contact regions for training data | Supervision for a learned contact head | GPU | [arXiv:2309.15273](https://arxiv.org/abs/2309.15273) |
+| ref | **BoxingVI** — 6,915 labelled punch clips + 2D pose, 18 athletes | Train/validate with real sparring data | dataset | [arXiv:2511.16524](https://arxiv.org/abs/2511.16524) |
+
+Note: the published vision-only boxing-landing baseline (Entropy 2024, MDPI) reports **F1≈49%** —
+so even the existing Approach-H stack (F1≈65.7%) already beats the literature. The path to 85%+
+runs through **Priority 1 (valid depth)** and **Priority 2 (SAM2 pixel overlap)**, not weight tuning.
+
+### Phase 4 — Region-Aware Pixel-Space Fusion (`fusion_v8.py`)
+
+[fusion_v8.py](fusion_v8.py) is a **CPU-runnable, SAM-free** detector built for the new export. It
+deliberately **avoids the broken `world_coords`** and works in pixel space (the GRAZE insight):
+
+- **Candidates** = ASFormer action windows (cover 30/31 GT — unlike `contact_events` at 5/31).
+- For each action it refines the impact frame to the in-window frame with the smallest
+  **normalized wrist↔receiver-body pixel gap** (keypoints projected into the bbox; depth-free).
+- Fuses: pixel gap, nearest `contact_event` prob + **region weight** (arm = guard → penalised,
+  head/torso → boosted), pixel-space wrist deceleration, receiver head reaction (Newton's 3rd law
+  in pixels), wrist approach-rate, multi-band **audio onset** (extracted from the video, no
+  librosa), and action confidence.
+- NMS by score with cooldown; sweeps the threshold and reports P/R/F1 vs the 31 GT.
+
+**Honest result on this data:** best **F1 ≈ 48% (P≈36%, R≈71%)** at threshold 0.42, cooldown 18,
+tolerance ±12 frames. This is effectively the *recall ceiling of the candidate set* — the audit
+above shows the fused score barely correlates with ground truth, because the one discriminative
+signal (SAM mask overlap) is unavailable on CPU. `fusion_v8` is therefore the correct **scaffold**
+to drop the Priority-1/2 GPU signals into; it is not a finished high-accuracy detector.
+
+Run:
+
+```bash
+python evaluation/diagnose_world_coords.py           # audit the export (numbers above)
+python detectors/fusion/v8.py                        # region-aware pixel-space fusion + GT eval
+python detectors/fusion/v8.py --no-audio --cooldown 10
+python detectors/fusion/v8.py --video                # render annotated output video
+```
+
+---
+
+### Phase 5 — SAM + Depth + Audio: the data ceiling (conclusive)
+
+After installing SAM properly and adding monocular depth, every signal was measured against a set of
+**video-verified landing labels** (sorted by hand from short clips), not the legacy 31 GT. The result
+is consistent and decisive:
+
+| Method (honest, non-leaked eval) | F1 / signal |
+|---|---|
+| `sam_detect.py` — SAM ViT-B mask overlap (the "strong" gate) | **F1 ≈ 47%**; many false positives at `sam=1.0` |
+| `sam_depth_detect.py` — SAM + Depth Anything V2 + head-reaction | gate separations ≈ 0 (`sam −0.03`, `depth +0.04`, `react −0.08`), F1 ≈ 38% |
+| `sound_detector.py` / `sound_ai_classify.py` / `sound_train_detect.py` — audio (onset, AudioSet AST, trained classifier) | **chance** (CV ROC-AUC 0.47–0.62; loudest sound in the match is *not* a punch) |
+
+**Why it plateaus:** a punch that *lands* vs one that *falls ~15 cm short* is a ~15 cm depth difference
+at a ~4 m camera distance — **below the resolution of single-camera monocular depth**. So static
+per-frame gates (2D overlap, depth, proximity) physically cannot separate "touching" from
+"almost-touching," and the broadcast audio is dominated by commentary/crowd. Confirmed five independent
+ways. **The ceiling on this single-camera data is ~47% F1**, regardless of how the static gates are
+combined. Breaking it needs either multi-view/stereo depth, a corrected cross-person `world_coords`, or
+a **temporal** model that learns the *reaction over time* (see the planned approach below).
+
+New scripts from this phase: [detectors/sam/sam_detect.py](detectors/sam/sam_detect.py),
+[detectors/sam/sam_depth_detect.py](detectors/sam/sam_depth_detect.py),
+[detectors/sound/sound_detector.py](detectors/sound/sound_detector.py),
+[detectors/sound/sound_ai_classify.py](detectors/sound/sound_ai_classify.py),
+[detectors/sound/sound_train_detect.py](detectors/sound/sound_train_detect.py).
+
+---
+
+## Planned Approach — Learned Temporal Impact Model (ASFormer-windowed clips)
+
+The static gates above look at single frames and hit a wall. The next direction is a **learned
+temporal model** that watches the short clip around each action and learns the **impact reaction over
+time** (the wrist decelerating into the body, the head snapping back, the torso folding on a body
+shot). That temporal reaction is the real evidence of a landed strike — it is exactly what the
+frame-wise gates could not use.
+
+### The low-effort labeling pipeline (this is the key idea)
+
+Data collection is the expensive part of any learned model. This plan makes it cheap by reusing the
+**already-trained ASFormer action recognizer** to do all the localization, so the only manual step is a
+fast binary sort:
+
+```
+ASFormer action JSON  ──►  extract one video+audio clip per action window
+   (window_start→window_end, padded to capture the contact + reaction)
+                          │
+                          ▼
+            outputs/impact_dataset/<clip>.mp4   (141 clips for this match)
+                          │
+        you sort each clip (fast, type-agnostic — punch OR kick):
+                          │
+         ┌────────────────┴────────────────┐
+         ▼                                  ▼
+   impact/  (strike connected)      not_impact/ (missed / blocked / no contact)
+                          │
+                          ▼
+            train a TEMPORAL model on the sorted clips
+```
+
+- **Action type does not matter** (jab / hook / uppercut / cross / any kick) — only *did it connect*.
+- ASFormer gives the frame range of every action, so clips are localized automatically; the human only
+  answers the one question a model can't yet: **impact or not.**
+- Tooling already built: **[dataset/extract_action_clips.py](dataset/extract_action_clips.py)** → produces
+  `outputs/impact_dataset/` with the clips plus empty `impact/` and `not_impact/` folders to sort into.
+  Filenames carry `action`, frame range, ASFormer confidence, and an audio-onset hint.
+
+### Two sources of labeled clips (both reuse existing annotations)
+
+1. **From the ASFormer *output* JSON (works now):** run the trained model on each match → for every
+   detected action, cut the clip from `window_start`→`window_end`. This needs only the model's JSON +
+   the video. Scale by having a teammate run more matches through ASFormer and return more
+   `video.mp4 + asformer.json` pairs.
+
+2. **From the ASFormer *training* dataset annotations:** the dataset ASFormer was trained on already
+   contains hand-annotated action frame ranges (from-frame → to-frame per action). Those same
+   annotation ranges can be used to extract the action clips directly — **no inference needed** — and
+   then split into impact / not_impact. This reuses labels that already exist, which is the cheapest
+   possible way to grow the dataset.
+
+### Candidate temporal models (pick by data volume)
+
+| Approach | Input | Temporal? | Data needed |
+|---|---|---|---|
+| Pretrained video backbone (VideoMAE / X3D / I3D) **fine-tuned** on the clips | raw clip frames | ✅ fully | hundreds (with transfer learning) |
+| Small **GRU / 1D-CNN / TimeSformer** on per-frame pose+flow features | feature sequence | ✅ | hundreds |
+| **Retrain ASFormer** with impact-aware labels (`landed` / `missed` / `background`) | per-frame I3D features | ✅ | many matches + GPU |
+| Features + XGBoost (baseline only) | summary vector | partly | ~150 |
+
+### Practical guidance (so the model actually generalizes)
+
+- **Pad the clip past `window_end`** (~+0.5 s): the "did it land" evidence is at and just after the
+  punch peak, not inside the throw. The extractor already does this.
+- **Label across many matches**, then **split train/test by match** (never random clips) — otherwise
+  the score is inflated by memorization.
+- **Blocked-on-guard = `not_impact`** (it didn't connect to the body); be consistent on grazes.
+- Handle **class imbalance** (impacts are the minority) with class weights / balanced sampling.
+- Fine-tuning a video model wants a **GPU**; on CPU, validate on a small subset and train for real on a
+  GPU/Colab.
+
+### Why this can beat the ~47% ceiling
+
+The static gates failed on the 15 cm depth problem. A temporal model sidesteps it: it doesn't need to
+measure depth — it learns the *consequence* of contact (the reaction), which **is** visible in the
+footage over a few frames. The ceiling now depends on whether those reactions are visible and on having
+enough labeled clips, not on monocular depth resolution.
 
 ---
 
@@ -786,9 +987,9 @@ F1 ≈ 72%, Precision ≈ 68%, Recall ≈ 77%
 
 ## Requested JSON Improvements
 
-The current `shared_space_coords` has a fundamental cross-person Z alignment problem. See [NOTE_FOR_TEAMMATE.md](NOTE_FOR_TEAMMATE.md) and [SLACK_MESSAGE_FOR_TEAMMATE.md](SLACK_MESSAGE_FOR_TEAMMATE.md) for full explanation with real diagnostic numbers.
+The current `shared_space_coords` has a fundamental cross-person Z alignment problem. See [docs/NOTE_FOR_TEAMMATE.md](docs/NOTE_FOR_TEAMMATE.md) and [docs/SLACK_MESSAGE_FOR_TEAMMATE.md](docs/SLACK_MESSAGE_FOR_TEAMMATE.md) for full explanation with real diagnostic numbers.
 
-See [example_sam3d_requested_format.json](example_sam3d_requested_format.json) for the complete requested format.
+See [data/example_sam3d_requested_format.json](data/example_sam3d_requested_format.json) for the complete requested format.
 
 ### Problem Demonstrated
 
@@ -903,96 +1104,103 @@ Format: `M:S:F` where F is frame-within-second at 24.995 fps.
 ## Repository Structure
 
 ```
-SAM3D_Module/
+Contact_Detection/
 │
-├── README.md                       ← This file (comprehensive documentation)
-├── SYSTEM_EXPLANATION.md           ← Technical explanation of all 7 approaches A-G
-├── NOTE_FOR_TEAMMATE.md            ← JSON format improvement request (detailed)
-├── SLACK_MESSAGE_FOR_TEAMMATE.md   ← Informal version of the JSON request
-├── RTX5080_GPU_SETUP.md            ← GPU setup guide for RTX 5080 (Blackwell)
-├── WALKTHROUGH.md                  ← Phase 1 walkthrough (5-gate, no SAM)
-│
-├── example_sam3d_requested_format.json  ← Complete example of requested JSON format
+├── README.md                        ← This file (comprehensive documentation)
 ├── requirements.txt
 ├── .gitignore
 │
-│── Core System ──────────────────────────────────────────────────────
-├── config.py                       ← All hyperparameters and Pi-HOC settings
-├── keypoint_loader.py              ← Loads 2d/3d JSON + ASFormer actions → NumPy
-├── impact_detector.py              ← 5-gate impact scoring engine (Phase 1)
-├── impact_report.py                ← Visual report generator (Phase 1)
+│── Root (shared foundation, imported by every package) ──────────────
+├── config.py                        ← All hyperparameters and Pi-HOC settings
+├── keypoint_loader.py               ← Loads 2d/3d JSON + ASFormer actions → NumPy
 │
-│── Entry Points ─────────────────────────────────────────────────────
-├── run_impact_detection.py         ← Phase 1 entry point (5-gate, no SAM)
-├── run_detection.py                ← Phase 2 entry point (live YOLO + SAM)
-├── pipeline.py                     ← Live YOLO pose + SAM pipeline
-├── pipeline_json.py                ← JSON-based pipeline (Approaches A-G)
+│── docs/ ────────────────────────────────────────────────────────────
+│   ├── SYSTEM_EXPLANATION.md        ← Technical explanation of all approaches A-G
+│   ├── NOTE_FOR_TEAMMATE.md         ← JSON format improvement request (detailed)
+│   ├── SLACK_MESSAGE_FOR_TEAMMATE.md← Informal version of the JSON request
+│   ├── RTX5080_GPU_SETUP.md         ← GPU setup guide for RTX 5080 (Blackwell)
+│   └── WALKTHROUGH.md               ← Phase 1 walkthrough (5-gate, no SAM)
 │
-│── SAM Approaches A–H ───────────────────────────────────────────────
-├── approach_h_fullscan.py          ← Approach H: full-frame SAM scanner
-├── postfilter_h.py                 ← Post-filter for H (cd + IoU → optimal F1)
-├── optflow_gate.py                 ← Optical flow head-snap gate (H v2)
-├── pihoc_filter.py                 ← Pi-HOC contact region filter (H v3)
-├── depth_filter.py                 ← Depth Anything V2 wrist-depth filter (H v4)
+│── data/ ────────────────────────────────────────────────────────────
+│   └── example_sam3d_requested_format.json ← Example of requested JSON format
 │
-│── Fusion Approaches ────────────────────────────────────────────────
-├── fusion_detect.py                ← Fusion v1: basic multi-signal detector
-├── fusion_v2.py                    ← Fusion v2: voting-based (6 signals)
-├── fusion_v3.py                    ← Fusion v3: precomputed features + threshold sweep
-├── fusion_v4.py                    ← Fusion v4: GradientBoosting + rich features
-├── fusion_v5.py                    ← Fusion v5: relabeled GT + contact metadata
-├── fusion_v6.py                    ← Fusion v6: XGBoost + optical flow + head accel
-├── fusion_v7.py                    ← Fusion v7: spectral features + paired physics
+│── scripts/ — runnable entry points ────────────────────────────────
+│   ├── run_phase1.py                ← Phase 1 entry point (5-gate, no SAM)
+│   └── run_detection.py             ← Phase 2 entry point (live YOLO + SAM)
 │
-│── High Precision Experiments ───────────────────────────────────────
-├── high_precision.py               ← Grid search: P≥0.80 constraint
-├── high_precision_v2.py            ← Push P≥0.80 with max recall, 3+ signal corroboration
-├── sweep_action_only.py            ← Baseline: action JSON + cooldown only (no features)
+│── detectors/ — all detection approaches ────────────────────────────
+│   ├── phase1/
+│   │   ├── impact_detector.py       ← 5-gate impact scoring engine
+│   │   └── impact_report.py         ← Visual report generator
+│   ├── approach_h/
+│   │   ├── fullscan.py              ← Approach H: full-frame SAM scanner
+│   │   └── postfilter.py            ← Post-filter (cooldown + IoU → optimal F1)
+│   └── fusion/
+│       ├── base.py                  ← Fusion v1: basic multi-signal detector
+│       ├── v2.py                    ← Voting-based (6 signals)
+│       ├── v3.py                    ← Precomputed features + threshold sweep
+│       ├── v4.py                    ← GradientBoosting + rich features
+│       ├── v5.py                    ← Relabeled GT + contact metadata
+│       ├── v6.py                    ← XGBoost + optical flow + head accel
+│       ├── v7.py                    ← Spectral features + paired physics
+│       └── v8.py                    ← Region-aware pixel-space fusion (CPU, SAM-free)
 │
-│── Analysis & Evaluation ────────────────────────────────────────────
-├── evaluate_vs_gt.py               ← Evaluate any detection JSON vs 31 GT timestamps
-├── relabel_gt.py                   ← Correct GT timestamps using geometry + audio
-├── generate_analysis_report.py     ← Generate visual analysis report
-├── verify_impacts.py               ← Visual verification of detected impacts
+│── filters/ — standalone post-filters ──────────────────────────────
+│   ├── optflow_gate.py              ← Optical flow head-snap gate
+│   ├── pihoc_filter.py              ← Pi-HOC contact region filter
+│   └── depth_filter.py              ← Depth Anything V2 wrist-depth filter
 │
-│── Hybrid Approaches ────────────────────────────────────────────────
-├── hybrid_pipeline.py              ← Hybrid: live YOLO + pre-extracted 3D keypoints
-├── detect_3d_impacts.py            ← 3D impact detector variant
-├── detect_impacts_new.py           ← Alternative detection formulation
+│── pipeline/ — full end-to-end pipelines ────────────────────────────
+│   ├── json_pipeline.py             ← JSON-based pipeline (Approaches A-G)
+│   └── live_pipeline.py             ← Live YOLO pose + SAM pipeline
 │
-│── Rendering & Visualization ────────────────────────────────────────
-├── impact_fx.py                    ← Cinematic FX renderer (flash, sparks, shake, audio)
-├── render_impact_video.py          ← Render annotated impact video
-├── render_final.py                 ← Final render pass
-├── render_v5.py                    ← Render variant v5
-├── frame_to_video.py               ← Frames → video compiler
+│── rendering/ — video renderers ─────────────────────────────────────
+│   ├── impact_fx.py                 ← Cinematic FX (flash, sparks, shake, audio)
+│   ├── render_impact_video.py       ← Render annotated impact video
+│   ├── render_final.py              ← Final render pass
+│   ├── render_v5.py                 ← Render variant v5
+│   └── frame_to_video.py            ← Frames → video compiler
 │
-│── Models (Python packages) ─────────────────────────────────────────
-├── models/
-│   ├── detector.py                 ← YOLO-based fighter detection
-│   ├── segmenter.py                ← SAM wrapper for body segmentation
-│   └── tracker.py                  ← Multi-fighter tracker
+│── evaluation/ — metrics & diagnostics ──────────────────────────────
+│   ├── evaluate_vs_gt.py            ← Evaluate detection JSON vs 31 GT timestamps
+│   ├── relabel_gt.py                ← Correct GT timestamps via geometry + audio
+│   ├── verify_impacts.py            ← Visual verification of detected impacts
+│   ├── diagnose_world_coords.py     ← Audit world_coords / keypoint_conf / contact_events
+│   └── generate_analysis_report.py  ← Generate visual analysis report
 │
-│── Utils (Python packages) ──────────────────────────────────────────
-├── utils/
-│   ├── geometry.py                 ← 3D geometry utilities (distances, vectors)
-│   ├── flow.py                     ← Optical flow computation
-│   ├── visualization.py            ← OpenCV drawing utilities
-│   ├── body_contact_viz.py         ← Body contact region visualization
-│   ├── body_mesh_viz.py            ← SMPL body mesh visualization
-│   ├── smpl_mesh_viz.py            ← SMPL mesh renderer
-│   ├── smpl_video_viz.py           ← SMPL video overlay
-│   └── pose_3d_viz.py              ← 3D pose visualization
+│── experiments/ — one-off research scripts ──────────────────────────
+│   ├── high_precision.py            ← Grid search: P≥0.80 constraint
+│   ├── high_precision_v2.py         ← P≥0.80 with 3+ signal corroboration
+│   ├── sweep_action_only.py         ← Baseline: action JSON + cooldown only
+│   ├── detect_3d_impacts.py         ← 3D impact detector variant
+│   ├── detect_impacts_new.py        ← Alternative detection formulation
+│   └── hybrid_pipeline.py           ← Hybrid: live YOLO + pre-extracted 3D keypoints
 │
-│── Impact Detection Package ─────────────────────────────────────────
-├── impact_detection/
-│   ├── impact_classifier.py        ← Core impact classification logic
-│   └── pair_analyzer.py            ← Fighter-pair analysis utilities
+│── models/ — model wrappers ──────────────────────────────────────────
+│   ├── detector.py                  ← YOLO-based fighter detection
+│   ├── segmenter.py                 ← SAM wrapper for body segmentation
+│   └── tracker.py                   ← Multi-fighter tracker
 │
-│── Model Checkpoints (Git-ignored) ──────────────────────────────────
-└── checkpoints/
-    ├── sam_vit_b_01ec64.pth        ← SAM ViT-B (375MB) — download separately
-    └── basicmodel_m_lbs_10_207_0_v1.0.0.pkl  ← SMPL body model — download separately
+│── utils/ — shared utilities ─────────────────────────────────────────
+│   ├── geometry.py                  ← 3D geometry (distances, vectors)
+│   ├── flow.py                      ← Optical flow computation
+│   ├── visualization.py             ← OpenCV drawing utilities
+│   ├── body_contact_viz.py          ← Body contact region visualization
+│   ├── body_mesh_viz.py             ← SMPL body mesh visualization
+│   ├── smpl_mesh_viz.py             ← SMPL mesh renderer
+│   ├── smpl_video_viz.py            ← SMPL video overlay
+│   └── pose_3d_viz.py               ← 3D pose visualization
+│
+│── impact_detection/ — classification package ────────────────────────
+│   ├── impact_classifier.py         ← Core impact classification logic
+│   └── pair_analyzer.py             ← Fighter-pair analysis utilities
+│
+│── checkpoints/ (git-ignored) ────────────────────────────────────────
+│   ├── sam_vit_b_01ec64.pth         ← SAM ViT-B (375MB) — download separately
+│   └── basicmodel_m_lbs_10_207_0_v1.0.0.pkl  ← SMPL body model — download separately
+│
+└── outputs/ (git-ignored) ────────────────────────────────────────────
+    └── 3_fusion_v8.mp4              ← Annotated output video (green=HIT, red=FP)
 ```
 
 ---
@@ -1008,7 +1216,7 @@ SAM3D_Module/
 
 ### RTX 5080 (Blackwell) Users
 
-See [RTX5080_GPU_SETUP.md](RTX5080_GPU_SETUP.md). You need CUDA 12.8+ wheels:
+See [docs/RTX5080_GPU_SETUP.md](docs/RTX5080_GPU_SETUP.md). You need CUDA 12.8+ wheels:
 
 ```bash
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
@@ -1078,57 +1286,115 @@ KEYPOINTS_3D_PATH = r"/path/to/3d_points.json"
 ACTIONS_PATH      = r"/path/to/full_results.json"
 ```
 
-### Phase 1 — 5-Gate (No SAM, Fast)
+> **Full command reference for every method.** All scripts run with the
+> miniconda Python here (`/home/jake/miniconda3/bin/python3.13`), or just
+> `python` in your env. Data paths are set in `config.py` (legacy detectors) or
+> at the top of each session script (current detectors).
+
+### 0. Data audit (run this first)
 
 ```bash
-python run_impact_detection.py
-python run_impact_detection.py --threshold 0.50
-python run_impact_detection.py --no-report
+python evaluation/diagnose_world_coords.py     # audit world_coords / keypoint_conf / contact_events
+python evaluation/diagnose_world_coords.py --sam3d /path/to/<id>_sam3d.json
 ```
 
-### Phase 2 — Approach H (Full-Frame SAM Scanner)
+### 1. SAM detectors (the strong visual signal)
 
 ```bash
-python approach_h_fullscan.py
-python approach_h_fullscan.py --threshold 0.42
-python approach_h_fullscan.py --no-video
+# SAM mask overlap — is the wrist inside the opponent's body silhouette?
+python detectors/sam/sam_detect.py                      # full run + video
+python detectors/sam/sam_detect.py --thr 0.5 --cooldown 12 --tol 12
+python detectors/sam/sam_detect.py --no-video           # detection + metrics only
+
+# SAM + Depth Anything V2 + receiver head-reaction
+python detectors/sam/sam_depth_detect.py                # full run + video
+python detectors/sam/sam_depth_detect.py --no-video     # diagnostic + metrics only
+python detectors/sam/sam_depth_detect.py --combine and  # AND-gate instead of weighted
 ```
 
-Then apply post-filtering:
+### 2. Visual fusion (CPU-runnable, SAM-free)
 
 ```bash
-python postfilter_h.py                    # optimal: cd=50, IoU≤0.35
-python postfilter_h.py --cooldown 30
-python postfilter_h.py --max-iou 1.0     # disable IoU filter
+python detectors/fusion/v8.py                  # region-aware pixel-space fusion + GT eval
+python detectors/fusion/v8.py --no-audio --cooldown 10
+python detectors/fusion/v8.py --video          # render annotated output video
 ```
 
-Optional additional filters:
+### 3. Sound module (`detectors/sound/`)
 
 ```bash
-python optflow_gate.py                   # optical flow gate
-python pihoc_filter.py --video           # Pi-HOC contact region filter
-python depth_filter.py --depth-thr 0.15  # Depth Anything V2 filter
+# (a) onset detector — standalone audio impact detection + annotated video
+python detectors/sound/sound_detector.py
+python detectors/sound/sound_detector.py --threshold 1.5 --cooldown 10
+
+# (b) cut candidate clips for labelling
+python detectors/sound/sound_detector.py --extract-samples --sample-threshold 1.5
+
+# (c) score clips with the pretrained AudioSet AST model + auto-sort
+python detectors/sound/sound_ai_classify.py
+python detectors/sound/sound_ai_classify.py --auto-sort --punch-thr 0.15
+
+# (d) train a classifier on YOUR sorted labels, then scan the video
+python detectors/sound/sound_train_detect.py --sample-dir outputs/sound_samples_av --mode impact
+python detectors/sound/sound_train_detect.py --sample-dir outputs/sound_samples_av --mode logreg --no-video
 ```
 
-### Phase 2 — Fusion (Requires world_coords + audio)
+### 4. Dataset extraction for the planned temporal model (`dataset/`)
 
 ```bash
-python fusion_v7.py    # best fusion method
-python fusion_v6.py    # XGBoost + optical flow
-python fusion_v5.py    # with relabeled GT
+# one video+audio clip per ASFormer action window → sort into impact/ not_impact/
+python dataset/extract_action_clips.py
+python dataset/extract_action_clips.py --pre 0.4 --post 0.7 --min-dur 1.4
+python dataset/extract_action_clips.py --merge-gap 6        # merge rapid combos
+
+# video+audio clips around audio-onset candidates (alt labelling set)
+python dataset/extract_av_samples.py --pad 0.7
 ```
 
-### Evaluation
+### 5. Generic renderer (annotate any detection JSON onto the video)
 
 ```bash
-python evaluate_vs_gt.py    # evaluate any output JSON vs 31 GT timestamps
+python rendering/render_from_json.py --json outputs/sam_detect.json \
+       --out outputs/sam_detect.mp4 --label "SAM overlap"
 ```
 
-### Render Annotated Video with FX
+### 6. Legacy detectors (original pipeline, old `2d/3d/full_results` format)
 
 ```bash
-python impact_fx.py         # apply cinematic FX (flash, sparks, shake, audio)
-python render_impact_video.py
+# Phase 1 — 5-gate physics, no SAM (fast; produces report + JSON, render via render_from_json)
+python scripts/run_phase1.py
+python scripts/run_phase1.py --threshold 0.50 --no-report
+
+# Approaches A–G — SAM in ASFormer windows (SLOW on CPU ≈ 77 min/approach)
+python pipeline/json_pipeline.py --approach all --no-video
+python pipeline/json_pipeline.py --approach D            # single approach + video
+
+# Approach H — full-frame SAM scanner (VERY slow on CPU ≈ 2.5 hr)
+python detectors/approach_h/fullscan.py
+python detectors/approach_h/fullscan.py --no-video
+python detectors/approach_h/postfilter.py                # optimal: cd=50, IoU≤0.35
+
+# Fusion v2–v7 — metric/JSON experiments (NO video; some need relabeled_gt.json / 3.wav)
+python detectors/fusion/v7.py            # spectral + paired physics (best legacy)
+python detectors/fusion/v6.py            # XGBoost + optical flow
+python detectors/fusion/v2.py            # voting baseline
+
+# Standalone filters (post-process Approach-H detections)
+python filters/optflow_gate.py
+python filters/pihoc_filter.py --video
+python filters/depth_filter.py --depth-thr 0.15
+
+# High-precision / baseline experiments
+python experiments/high_precision_v2.py
+python experiments/sweep_action_only.py
+```
+
+### 7. Evaluation & FX rendering
+
+```bash
+python evaluation/evaluate_vs_gt.py            # evaluate any detection JSON vs 31 GT
+python rendering/impact_fx.py                  # cinematic FX (flash, sparks, shake, audio)
+python rendering/render_impact_video.py
 ```
 
 ---
