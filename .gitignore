@@ -11,8 +11,7 @@ __pycache__/
 *.h5
 
 # Checkpoint directory content (keep the directory, ignore the weights)
-checkpoints/*.pth
-checkpoints/*.pkl
+checkpoints/
 
 # Audio files (large)
 *.wav
@@ -38,6 +37,18 @@ FX_Outputs/
 CLAUDE.md
 .cursor/
 .aider*
+
+# Markdown docs — only README.md is published to GitHub
+*.md
+!README.md
+
+# Data archives / collaborator packages
+*.zip
+for_sefwen/
+
+# Heavy dataset files (per-frame keypoint dumps and tracking data)
+**/sam3d.json
+dataset/lillyella_vs_zoe/Round*/tracking.json
 
 # Internal docs / notes (not for the public code repo)
 docs/

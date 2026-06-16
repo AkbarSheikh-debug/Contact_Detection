@@ -1,0 +1,1113 @@
+{
+  "fight": "lillyella_vs_zoe",
+  "round": 5,
+  "actions": [
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 86,
+      "window_end": 91,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "jab_left",
+      "window_start": 89,
+      "window_end": 95,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "cross_right",
+      "window_start": 90,
+      "window_end": 96,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 96,
+      "window_end": 104,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 101,
+      "window_end": 108,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 149,
+      "window_end": 154,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "jab_left",
+      "window_start": 150,
+      "window_end": 156,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 156,
+      "window_end": 162,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 181,
+      "window_end": 188,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "uppercut_left",
+      "window_start": 216,
+      "window_end": 222,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 230,
+      "window_end": 237,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 243,
+      "window_end": 251,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 253,
+      "window_end": 261,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 405,
+      "window_end": 409,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "jab_left",
+      "window_start": 406,
+      "window_end": 413,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "overhand_right",
+      "window_start": 408,
+      "window_end": 414,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 417,
+      "window_end": 424,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 418,
+      "window_end": 424,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 468,
+      "window_end": 473,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 487,
+      "window_end": 493,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 492,
+      "window_end": 498,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 502,
+      "window_end": 508,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "uppercut_right",
+      "window_start": 508,
+      "window_end": 515,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 520,
+      "window_end": 526,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 536,
+      "window_end": 544,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 822,
+      "window_end": 828,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "jab_left",
+      "window_start": 825,
+      "window_end": 832,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "jab_left",
+      "window_start": 834,
+      "window_end": 840,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 875,
+      "window_end": 879,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_right",
+      "window_start": 880,
+      "window_end": 885,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 886,
+      "window_end": 892,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 897,
+      "window_end": 903,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 902,
+      "window_end": 910,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_right",
+      "window_start": 934,
+      "window_end": 941,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_left",
+      "window_start": 942,
+      "window_end": 948,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_right",
+      "window_start": 948,
+      "window_end": 954,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_left",
+      "window_start": 950,
+      "window_end": 956,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 955,
+      "window_end": 962,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 975,
+      "window_end": 981,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 982,
+      "window_end": 987,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_left",
+      "window_start": 990,
+      "window_end": 997,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "jab_left",
+      "window_start": 1005,
+      "window_end": 1012,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 1017,
+      "window_end": 1025,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "uppercut_right",
+      "window_start": 1042,
+      "window_end": 1048,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_left",
+      "window_start": 1048,
+      "window_end": 1053,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 1053,
+      "window_end": 1058,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 1061,
+      "window_end": 1067,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_left",
+      "window_start": 1068,
+      "window_end": 1074,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 1074,
+      "window_end": 1080,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 1076,
+      "window_end": 1082,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_left",
+      "window_start": 1081,
+      "window_end": 1086,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 1089,
+      "window_end": 1095,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_left",
+      "window_start": 1094,
+      "window_end": 1099,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_right",
+      "window_start": 1106,
+      "window_end": 1111,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 1113,
+      "window_end": 1119,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 1133,
+      "window_end": 1139,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 1156,
+      "window_end": 1164,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 1415,
+      "window_end": 1421,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 1450,
+      "window_end": 1457,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "jab_left",
+      "window_start": 1453,
+      "window_end": 1459,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "jab_left",
+      "window_start": 1462,
+      "window_end": 1468,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 1492,
+      "window_end": 1499,
+      "part": "part01",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 3004,
+      "window_end": 3013,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_left",
+      "window_start": 3014,
+      "window_end": 3021,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3033,
+      "window_end": 3039,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3062,
+      "window_end": 3068,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_right",
+      "window_start": 3065,
+      "window_end": 3072,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3080,
+      "window_end": 3086,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 3110,
+      "window_end": 3117,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 3138,
+      "window_end": 3146,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 3147,
+      "window_end": 3154,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3151,
+      "window_end": 3158,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "jab_left",
+      "window_start": 3405,
+      "window_end": 3413,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 3443,
+      "window_end": 3448,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "cross_right",
+      "window_start": 3449,
+      "window_end": 3454,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 3526,
+      "window_end": 3530,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "cross_right",
+      "window_start": 3531,
+      "window_end": 3537,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 3541,
+      "window_end": 3548,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_right",
+      "window_start": 3550,
+      "window_end": 3556,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 3557,
+      "window_end": 3563,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 3569,
+      "window_end": 3575,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 3575,
+      "window_end": 3581,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 3582,
+      "window_end": 3589,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_left",
+      "window_start": 3587,
+      "window_end": 3595,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_right",
+      "window_start": 3600,
+      "window_end": 3606,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3607,
+      "window_end": 3615,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_left",
+      "window_start": 3616,
+      "window_end": 3623,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3630,
+      "window_end": 3637,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3652,
+      "window_end": 3659,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "uppercut_right",
+      "window_start": 3688,
+      "window_end": 3696,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3701,
+      "window_end": 3707,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 3719,
+      "window_end": 3725,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 3726,
+      "window_end": 3733,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3743,
+      "window_end": 3750,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_left",
+      "window_start": 3751,
+      "window_end": 3757,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_left",
+      "window_start": 3761,
+      "window_end": 3767,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3785,
+      "window_end": 3792,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3798,
+      "window_end": 3805,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 3832,
+      "window_end": 3837,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "jab_left",
+      "window_start": 4054,
+      "window_end": 4061,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "jab_left",
+      "window_start": 4057,
+      "window_end": 4063,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 4067,
+      "window_end": 4072,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 4069,
+      "window_end": 4076,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_right",
+      "window_start": 4097,
+      "window_end": 4107,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 4120,
+      "window_end": 4127,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_right",
+      "window_start": 4141,
+      "window_end": 4148,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 4146,
+      "window_end": 4153,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 4162,
+      "window_end": 4168,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 4204,
+      "window_end": 4211,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 4225,
+      "window_end": 4230,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 4273,
+      "window_end": 4278,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 4274,
+      "window_end": 4278,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 4281,
+      "window_end": 4286,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 4290,
+      "window_end": 4294,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 4297,
+      "window_end": 4302,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 4299,
+      "window_end": 4305,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 4381,
+      "window_end": 4388,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_right",
+      "window_start": 4408,
+      "window_end": 4415,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_left",
+      "window_start": 4416,
+      "window_end": 4424,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 4420,
+      "window_end": 4426,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "hook_right",
+      "window_start": 4426,
+      "window_end": 4433,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 1,
+      "fighter_type": "fighter_1",
+      "action": "hook_right",
+      "window_start": 4460,
+      "window_end": 4466,
+      "part": "part02",
+      "confidence": 1.0
+    },
+    {
+      "fighter_id": 0,
+      "fighter_type": "fighter_0",
+      "action": "uppercut_right",
+      "window_start": 4468,
+      "window_end": 4476,
+      "part": "part02",
+      "confidence": 1.0
+    }
+  ]
+}

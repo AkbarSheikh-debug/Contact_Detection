@@ -987,9 +987,9 @@ F1 ≈ 72%, Precision ≈ 68%, Recall ≈ 77%
 
 ## Requested JSON Improvements
 
-The current `shared_space_coords` has a fundamental cross-person Z alignment problem. See [docs/NOTE_FOR_TEAMMATE.md](docs/NOTE_FOR_TEAMMATE.md) and [docs/SLACK_MESSAGE_FOR_TEAMMATE.md](docs/SLACK_MESSAGE_FOR_TEAMMATE.md) for full explanation with real diagnostic numbers.
+The current `shared_space_coords` has a fundamental cross-person Z alignment problem described below with real diagnostic numbers.
 
-See [data/example_sam3d_requested_format.json](data/example_sam3d_requested_format.json) for the complete requested format.
+See [`data/example_sam3d_requested_format.json`](data/example_sam3d_requested_format.json) for the complete requested format.
 
 ### Problem Demonstrated
 
@@ -1104,25 +1104,18 @@ Format: `M:S:F` where F is frame-within-second at 24.995 fps.
 ## Repository Structure
 
 ```
-Contact_Detection/
+Impact_Detection/
 │
-├── README.md                        ← This file (comprehensive documentation)
+├── README.md                        ← This file
 ├── requirements.txt
 ├── .gitignore
 │
-│── Root (shared foundation, imported by every package) ──────────────
+│── Root (shared foundation) ─────────────────────────────────────────
 ├── config.py                        ← All hyperparameters and Pi-HOC settings
 ├── keypoint_loader.py               ← Loads 2d/3d JSON + ASFormer actions → NumPy
 │
-│── docs/ ────────────────────────────────────────────────────────────
-│   ├── SYSTEM_EXPLANATION.md        ← Technical explanation of all approaches A-G
-│   ├── NOTE_FOR_TEAMMATE.md         ← JSON format improvement request (detailed)
-│   ├── SLACK_MESSAGE_FOR_TEAMMATE.md← Informal version of the JSON request
-│   ├── RTX5080_GPU_SETUP.md         ← GPU setup guide for RTX 5080 (Blackwell)
-│   └── WALKTHROUGH.md               ← Phase 1 walkthrough (5-gate, no SAM)
-│
 │── data/ ────────────────────────────────────────────────────────────
-│   └── example_sam3d_requested_format.json ← Example of requested JSON format
+│   └── example_sam3d_requested_format.json ← Example of the requested JSON format
 │
 │── scripts/ — runnable entry points ────────────────────────────────
 │   ├── run_phase1.py                ← Phase 1 entry point (5-gate, no SAM)
@@ -1133,42 +1126,82 @@ Contact_Detection/
 │   │   ├── impact_detector.py       ← 5-gate impact scoring engine
 │   │   └── impact_report.py         ← Visual report generator
 │   ├── approach_h/
-│   │   ├── fullscan.py              ← Approach H: full-frame SAM scanner
+│   │   ├── fullscan.py              ← Approach H: full-frame SAM scanner (best static: F1=65.7%)
 │   │   └── postfilter.py            ← Post-filter (cooldown + IoU → optimal F1)
-│   └── fusion/
-│       ├── base.py                  ← Fusion v1: basic multi-signal detector
-│       ├── v2.py                    ← Voting-based (6 signals)
-│       ├── v3.py                    ← Precomputed features + threshold sweep
-│       ├── v4.py                    ← GradientBoosting + rich features
-│       ├── v5.py                    ← Relabeled GT + contact metadata
-│       ├── v6.py                    ← XGBoost + optical flow + head accel
-│       ├── v7.py                    ← Spectral features + paired physics
-│       └── v8.py                    ← Region-aware pixel-space fusion (CPU, SAM-free)
+│   ├── sam/
+│   │   ├── sam_detect.py            ← SAM mask-overlap detector
+│   │   └── sam_depth_detect.py      ← SAM + Depth Anything V2 + head-reaction
+│   ├── sound/
+│   │   ├── sound_detector.py        ← Audio onset detector (spectral flux)
+│   │   ├── sound_ai_classify.py     ← AudioSet AST punch classifier
+│   │   └── sound_train_detect.py    ← Train on user-sorted clips, scan video
+│   ├── fusion/
+│   │   ├── base.py                  ← Fusion v1: basic multi-signal detector
+│   │   ├── v2.py                    ← Voting-based (6 signals)
+│   │   ├── v3.py                    ← Precomputed features + threshold sweep
+│   │   ├── v4.py                    ← GradientBoosting + rich features
+│   │   ├── v5.py                    ← Relabeled GT + contact metadata
+│   │   ├── v6.py                    ← XGBoost + optical flow + head accel
+│   │   ├── v7.py                    ← Spectral features + paired physics
+│   │   ├── v8.py                    ← Region-aware pixel-space fusion (CPU, SAM-free)
+│   │   └── v9.py                    ← MHR70-corrected world-XY contact detector
+│   └── mamma/
+│       ├── mamma_feature_contract.py← Schema adapter for MammaNet dense landmarks
+│       └── extract_frames_for_mamma.py ← Extract action-window frames for GPU box
 │
 │── filters/ — standalone post-filters ──────────────────────────────
 │   ├── optflow_gate.py              ← Optical flow head-snap gate
-│   ├── pihoc_filter.py              ← Pi-HOC contact region filter
+│   ├── pihoc_filter.py              ← Pi-HOC contact region filter (guard rejection)
 │   └── depth_filter.py              ← Depth Anything V2 wrist-depth filter
 │
-│── pipeline/ — full end-to-end pipelines ────────────────────────────
+│── pipeline/ — end-to-end pipelines ─────────────────────────────────
 │   ├── json_pipeline.py             ← JSON-based pipeline (Approaches A-G)
 │   └── live_pipeline.py             ← Live YOLO pose + SAM pipeline
 │
+│── dataset/ — data extraction & labeling ────────────────────────────
+│   ├── extract_action_clips.py      ← 1 clip per ASFormer window → impact/not_impact sort
+│   ├── extract_av_samples.py        ← Clips around audio onsets for manual sorting
+│   ├── prepare_lillyella_dataset.py ← Dataset prep for Lillyella vs Zoe match
+│   └── lillyella_vs_zoe/            ← Per-round JSONs + annotation manifest
+│       ├── Round3/ … Round8/        ← actions.json per round (tracking/sam3d gitignored)
+│       └── manifest.json            ← Clip-level impact/not_impact labels
+│
+│── tools/ — training & annotation utilities ──────────────────────────
+│   ├── annotation_tool.py           ← GUI: click-to-label impact frames on full video
+│   ├── annotate_clips.py            ← GUI: batch label clips as impact / not_impact
+│   ├── extract_gt_dataset.py        ← Extract patch (256×256) + clip (21fr) datasets from GT
+│   ├── train_clip_model.py          ← Fine-tune r3d_18 on GT clips; 5-fold + block CV
+│   ├── train_patch_cnn.py           ← Train patch-based CNN on GT crops
+│   ├── detect_new_video.py          ← Run trained r3d_18 on a new fight video
+│   ├── render_predictions.py        ← Render r3d_18 predictions with confidence borders
+│   ├── eval_v9_vs_gt.py             ← Evaluate v9 detections vs GT with grid search
+│   ├── coverage_diag.py             ← Check GT coverage by ASFormer windows
+│   ├── diag_missed_gt.py            ← Analyze why specific GT impacts were missed
+│   ├── split_f1_f2.py               ← Split video by fighter 1 / fighter 2
+│   ├── split_f1_f2_stable.py        ← Stable split with confidence tracking
+│   ├── split_f1_f2_smooth_track.py  ← Smooth split with temporal filtering
+│   ├── rename_f1_f2.py              ← Rename output files by fighter assignment
+│   ├── reencode_h264.py             ← Re-encode video to H.264 for compatibility
+│   ├── ablation_window.py           ← Ablation: effect of action-window padding
+│   ├── prefetch_weights.py          ← Pre-download SAM / AST / Depth Anything weights
+│   └── check_env.py                 ← Verify Python env (CUDA, packages, paths)
+│
 │── rendering/ — video renderers ─────────────────────────────────────
+│   ├── render_from_json.py          ← Render any detection JSON onto video
+│   ├── render_impact_video.py       ← Skeleton + impact flashes + HUD
 │   ├── impact_fx.py                 ← Cinematic FX (flash, sparks, shake, audio)
-│   ├── render_impact_video.py       ← Render annotated impact video
 │   ├── render_final.py              ← Final render pass
 │   ├── render_v5.py                 ← Render variant v5
-│   └── frame_to_video.py            ← Frames → video compiler
+│   └── frame_to_video.py            ← Frame sequence → video compiler
 │
 │── evaluation/ — metrics & diagnostics ──────────────────────────────
-│   ├── evaluate_vs_gt.py            ← Evaluate detection JSON vs 31 GT timestamps
+│   ├── evaluate_vs_gt.py            ← Evaluate detection JSON vs GT timestamps
 │   ├── relabel_gt.py                ← Correct GT timestamps via geometry + audio
 │   ├── verify_impacts.py            ← Visual verification of detected impacts
 │   ├── diagnose_world_coords.py     ← Audit world_coords / keypoint_conf / contact_events
 │   └── generate_analysis_report.py  ← Generate visual analysis report
 │
-│── experiments/ — one-off research scripts ──────────────────────────
+│── experiments/ — research ablations ────────────────────────────────
 │   ├── high_precision.py            ← Grid search: P≥0.80 constraint
 │   ├── high_precision_v2.py         ← P≥0.80 with 3+ signal corroboration
 │   ├── sweep_action_only.py         ← Baseline: action JSON + cooldown only
@@ -1177,9 +1210,9 @@ Contact_Detection/
 │   └── hybrid_pipeline.py           ← Hybrid: live YOLO + pre-extracted 3D keypoints
 │
 │── models/ — model wrappers ──────────────────────────────────────────
-│   ├── detector.py                  ← YOLO-based fighter detection
-│   ├── segmenter.py                 ← SAM wrapper for body segmentation
-│   └── tracker.py                   ← Multi-fighter tracker
+│   ├── detector.py                  ← YOLOv8-pose fighter detection
+│   ├── segmenter.py                 ← SAM ViT-B body segmentation wrapper
+│   └── tracker.py                   ← IoU-based multi-fighter tracker
 │
 │── utils/ — shared utilities ─────────────────────────────────────────
 │   ├── geometry.py                  ← 3D geometry (distances, vectors)
@@ -1196,11 +1229,10 @@ Contact_Detection/
 │   └── pair_analyzer.py             ← Fighter-pair analysis utilities
 │
 │── checkpoints/ (git-ignored) ────────────────────────────────────────
-│   ├── sam_vit_b_01ec64.pth         ← SAM ViT-B (375MB) — download separately
-│   └── basicmodel_m_lbs_10_207_0_v1.0.0.pkl  ← SMPL body model — download separately
+│   └── sam_vit_b_01ec64.pth         ← SAM ViT-B (375MB) — download separately
 │
 └── outputs/ (git-ignored) ────────────────────────────────────────────
-    └── 3_fusion_v8.mp4              ← Annotated output video (green=HIT, red=FP)
+    └── <annotated videos, detection JSONs, verified clips>
 ```
 
 ---
@@ -1216,7 +1248,7 @@ Contact_Detection/
 
 ### RTX 5080 (Blackwell) Users
 
-See [docs/RTX5080_GPU_SETUP.md](docs/RTX5080_GPU_SETUP.md). You need CUDA 12.8+ wheels:
+You need CUDA 12.8+ wheels for Blackwell:
 
 ```bash
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
@@ -1228,8 +1260,8 @@ Do **not** use `pip install torch` (gives CPU-only build).
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/your-username/SAM3D_Module.git
-cd SAM3D_Module
+git clone https://github.com/HIT-coach/Impact_Detection.git
+cd Impact_Detection
 
 # 2. Install PyTorch with CUDA (RTX 5080 / CUDA 12.8)
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
@@ -1389,10 +1421,49 @@ python experiments/high_precision_v2.py
 python experiments/sweep_action_only.py
 ```
 
-### 7. Evaluation & FX rendering
+### 7. Temporal model pipeline (`tools/`)
 
 ```bash
-python evaluation/evaluate_vs_gt.py            # evaluate any detection JSON vs 31 GT
+# Annotate ground-truth frames on the full video (click-to-label GUI)
+python tools/annotation_tool.py
+
+# Batch-label action clips as impact / not_impact (keyboard-driven GUI)
+python tools/annotate_clips.py
+python tools/annotate_clips.py --round 3 --speed 0.5
+
+# Build the patch + clip dataset from your GT annotations
+python tools/extract_gt_dataset.py
+
+# Fine-tune r3d_18 on the GT clips (5-fold + temporal-block CV)
+python tools/train_clip_model.py
+
+# Train a patch-based CNN on 256×256 GT crops
+python tools/train_patch_cnn.py
+
+# Run the trained r3d_18 on a new fight video
+python tools/detect_new_video.py --video /path/to/fight.mp4 --actions /path/to/actions.json
+
+# Render r3d_18 predictions with color-coded confidence borders
+python tools/render_predictions.py
+
+# Diagnostics
+python tools/coverage_diag.py                  # GT coverage by ASFormer windows
+python tools/diag_missed_gt.py                 # Why specific GT impacts were missed
+python tools/eval_v9_vs_gt.py                  # v9 vs GT with grid search
+
+# Video utilities
+python tools/split_f1_f2_stable.py             # Split video by fighter
+python tools/reencode_h264.py                  # Re-encode to H.264
+
+# Environment check
+python tools/check_env.py
+python tools/prefetch_weights.py               # Pre-download SAM / AST / Depth Anything
+```
+
+### 8. Evaluation & FX rendering
+
+```bash
+python evaluation/evaluate_vs_gt.py            # evaluate any detection JSON vs GT
 python rendering/impact_fx.py                  # cinematic FX (flash, sparks, shake, audio)
 python rendering/render_impact_video.py
 ```

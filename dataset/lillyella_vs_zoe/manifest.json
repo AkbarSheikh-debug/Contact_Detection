@@ -1,0 +1,4479 @@
+{
+  "fight": "lillyella_vs_zoe",
+  "rounds": [
+    3,
+    4,
+    5,
+    8
+  ],
+  "clips_dir": "C:\\Users\\XRIG\\Desktop\\Impact_Detection_Improve\\Impact_Detection\\dataset\\lillyella_vs_zoe\\clips",
+  "total_clips": 496,
+  "labeled": 11,
+  "unlabeled": 485,
+  "clips": [
+    {
+      "clip": "R3_f0_001_jab_left_f0046_f0051.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 46,
+      "window_end": 51,
+      "label": "impact"
+    },
+    {
+      "clip": "R3_f1_002_jab_left_f0046_f0052.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 46,
+      "window_end": 52,
+      "label": "impact"
+    },
+    {
+      "clip": "R3_f0_003_uppercut_right_f0052_f0058.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 52,
+      "window_end": 58,
+      "label": "impact"
+    },
+    {
+      "clip": "R3_f0_004_hook_left_f0059_f0065.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 59,
+      "window_end": 65,
+      "label": "impact"
+    },
+    {
+      "clip": "R3_f0_005_jab_left_f0117_f0123.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 117,
+      "window_end": 123,
+      "label": "impact"
+    },
+    {
+      "clip": "R3_f0_006_jab_left_f0129_f0136.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 129,
+      "window_end": 136,
+      "label": "impact"
+    },
+    {
+      "clip": "R3_f0_007_jab_left_f0140_f0146.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 140,
+      "window_end": 146,
+      "label": "impact"
+    },
+    {
+      "clip": "R3_f0_008_cross_right_f0146_f0152.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 146,
+      "window_end": 152,
+      "label": "impact"
+    },
+    {
+      "clip": "R3_f1_009_jab_left_f0202_f0206.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 202,
+      "window_end": 206,
+      "label": "not_impact"
+    },
+    {
+      "clip": "R3_f0_010_jab_left_f0243_f0251.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 243,
+      "window_end": 251,
+      "label": "not_impact"
+    },
+    {
+      "clip": "R3_f0_011_jab_left_f0273_f0282.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 273,
+      "window_end": 282,
+      "label": "impact"
+    },
+    {
+      "clip": "R3_f0_012_jab_left_f0370_f0377.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 370,
+      "window_end": 377,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_013_overhand_right_f0411_f0418.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 411,
+      "window_end": 418,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_014_overhand_right_f0451_f0459.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "overhand_right",
+      "window_start": 451,
+      "window_end": 459,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_015_hook_left_f0501_f0508.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 501,
+      "window_end": 508,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_016_hook_left_f0505_f0514.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 505,
+      "window_end": 514,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_017_uppercut_right_f0508_f0515.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 508,
+      "window_end": 515,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_018_jab_left_f0515_f0522.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 515,
+      "window_end": 522,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_019_overhand_right_f0531_f0538.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "overhand_right",
+      "window_start": 531,
+      "window_end": 538,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_020_jab_left_f0545_f0551.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 545,
+      "window_end": 551,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_021_uppercut_right_f0551_f0558.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 551,
+      "window_end": 558,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_022_hook_left_f0559_f0565.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 559,
+      "window_end": 565,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_023_hook_right_f0566_f0574.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 566,
+      "window_end": 574,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_024_hook_left_f0574_f0582.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 574,
+      "window_end": 582,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_025_hook_right_f0582_f0588.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 582,
+      "window_end": 588,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_026_hook_left_f0589_f0595.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 589,
+      "window_end": 595,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_027_hook_right_f0598_f0604.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 598,
+      "window_end": 604,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_028_hook_left_f0617_f0623.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 617,
+      "window_end": 623,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_029_hook_right_f0680_f0685.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 680,
+      "window_end": 685,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_030_hook_right_f0690_f0698.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 690,
+      "window_end": 698,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_031_hook_right_f0714_f0720.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 714,
+      "window_end": 720,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_032_jab_left_f0845_f0853.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 845,
+      "window_end": 853,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_033_jab_left_f0853_f0859.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 853,
+      "window_end": 859,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_034_jab_left_f0854_f0861.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 854,
+      "window_end": 861,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_035_jab_left_f0888_f0893.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 888,
+      "window_end": 893,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_036_cross_right_f0892_f0897.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 892,
+      "window_end": 897,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_037_hook_left_f0899_f0905.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 899,
+      "window_end": 905,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_038_hook_left_f0904_f0912.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 904,
+      "window_end": 912,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_039_uppercut_right_f0923_f0933.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 923,
+      "window_end": 933,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_040_hook_right_f0944_f0951.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 944,
+      "window_end": 951,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_041_uppercut_right_f0947_f0954.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 947,
+      "window_end": 954,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_042_hook_right_f0971_f0979.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 971,
+      "window_end": 979,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_043_hook_left_f0981_f0987.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 981,
+      "window_end": 987,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_044_hook_right_f1015_f1021.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1015,
+      "window_end": 1021,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_045_hook_left_f1081_f1087.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1081,
+      "window_end": 1087,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_046_hook_left_f1091_f1096.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1091,
+      "window_end": 1096,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_047_hook_right_f1094_f1100.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1094,
+      "window_end": 1100,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_048_hook_left_f1106_f1114.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1106,
+      "window_end": 1114,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_049_hook_left_f1116_f1123.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1116,
+      "window_end": 1123,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_050_hook_right_f1121_f1128.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1121,
+      "window_end": 1128,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_051_hook_right_f1133_f1140.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1133,
+      "window_end": 1140,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_052_hook_left_f1136_f1144.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1136,
+      "window_end": 1144,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_053_jab_left_f1302_f1309.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 1302,
+      "window_end": 1309,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_054_overhand_right_f1305_f1311.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 1305,
+      "window_end": 1311,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_055_uppercut_right_f1332_f1339.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 1332,
+      "window_end": 1339,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_056_uppercut_right_f1335_f1343.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 1335,
+      "window_end": 1343,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_057_hook_left_f1338_f1344.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 1338,
+      "window_end": 1344,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_058_hook_left_f1343_f1350.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1343,
+      "window_end": 1350,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_059_hook_right_f1352_f1358.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 1352,
+      "window_end": 1358,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_060_hook_right_f1366_f1371.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1366,
+      "window_end": 1371,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_061_hook_right_f1407_f1414.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 1407,
+      "window_end": 1414,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_062_hook_right_f1409_f1415.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1409,
+      "window_end": 1415,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_063_uppercut_right_f1451_f1458.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 1451,
+      "window_end": 1458,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_064_hook_right_f1491_f1499.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 1491,
+      "window_end": 1499,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_065_jab_left_f3076_f3081.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3076,
+      "window_end": 3081,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_066_cross_right_f3081_f3086.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 3081,
+      "window_end": 3086,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_067_jab_left_f3178_f3184.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3178,
+      "window_end": 3184,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_068_jab_left_f3191_f3197.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3191,
+      "window_end": 3197,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_069_uppercut_right_f3198_f3203.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3198,
+      "window_end": 3203,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_070_hook_left_f3212_f3220.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3212,
+      "window_end": 3220,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_071_uppercut_right_f3229_f3236.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 3229,
+      "window_end": 3236,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_072_hook_right_f3247_f3254.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3247,
+      "window_end": 3254,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_073_uppercut_left_f3257_f3265.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "uppercut_left",
+      "window_start": 3257,
+      "window_end": 3265,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_074_hook_left_f3302_f3309.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3302,
+      "window_end": 3309,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_075_hook_left_f3312_f3319.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3312,
+      "window_end": 3319,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_076_uppercut_right_f3332_f3339.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3332,
+      "window_end": 3339,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_077_hook_left_f3340_f3346.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3340,
+      "window_end": 3346,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_078_hook_right_f3347_f3353.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 3347,
+      "window_end": 3353,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_079_hook_right_f3370_f3379.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3370,
+      "window_end": 3379,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_080_uppercut_right_f3410_f3419.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 3410,
+      "window_end": 3419,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_081_uppercut_right_f3425_f3434.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3425,
+      "window_end": 3434,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_082_uppercut_left_f3435_f3443.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_left",
+      "window_start": 3435,
+      "window_end": 3443,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_083_hook_right_f3452_f3459.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3452,
+      "window_end": 3459,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_084_uppercut_right_f3480_f3487.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3480,
+      "window_end": 3487,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_085_hook_left_f3487_f3493.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3487,
+      "window_end": 3493,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_086_hook_right_f3494_f3500.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 3494,
+      "window_end": 3500,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_087_hook_left_f3501_f3507.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3501,
+      "window_end": 3507,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_088_hook_left_f3514_f3521.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3514,
+      "window_end": 3521,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_089_uppercut_right_f3521_f3527.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3521,
+      "window_end": 3527,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_090_overhand_right_f3525_f3534.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 3525,
+      "window_end": 3534,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_091_hook_left_f3536_f3543.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3536,
+      "window_end": 3543,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_092_cross_right_f3545_f3553.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "cross_right",
+      "window_start": 3545,
+      "window_end": 3553,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_093_jab_left_f3563_f3568.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 3563,
+      "window_end": 3568,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_094_uppercut_right_f3569_f3575.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 3569,
+      "window_end": 3575,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_095_hook_right_f3603_f3612.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3603,
+      "window_end": 3612,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_096_uppercut_right_f3624_f3631.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3624,
+      "window_end": 3631,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_097_hook_left_f3631_f3638.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3631,
+      "window_end": 3638,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_098_hook_right_f3638_f3644.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3638,
+      "window_end": 3644,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_099_uppercut_right_f3695_f3703.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 3695,
+      "window_end": 3703,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_100_overhand_right_f3726_f3732.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "overhand_right",
+      "window_start": 3726,
+      "window_end": 3732,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_101_hook_left_f3741_f3749.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3741,
+      "window_end": 3749,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_102_hook_left_f3750_f3755.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3750,
+      "window_end": 3755,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_103_uppercut_right_f3756_f3763.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 3756,
+      "window_end": 3763,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_104_hook_left_f3757_f3762.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3757,
+      "window_end": 3762,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_105_hook_left_f3773_f3778.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3773,
+      "window_end": 3778,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_106_hook_left_f3780_f3786.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3780,
+      "window_end": 3786,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_107_overhand_right_f3937_f3945.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 3937,
+      "window_end": 3945,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_108_uppercut_right_f3959_f3967.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3959,
+      "window_end": 3967,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_109_hook_left_f3967_f3973.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3967,
+      "window_end": 3973,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_110_hook_left_f3982_f3989.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3982,
+      "window_end": 3989,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_111_hook_right_f4000_f4007.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4000,
+      "window_end": 4007,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_112_uppercut_right_f4026_f4035.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 4026,
+      "window_end": 4035,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_113_hook_right_f4050_f4057.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4050,
+      "window_end": 4057,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_114_uppercut_right_f4072_f4079.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 4072,
+      "window_end": 4079,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_115_uppercut_right_f4075_f4082.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 4075,
+      "window_end": 4082,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_116_hook_left_f4082_f4087.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4082,
+      "window_end": 4087,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_117_overhand_right_f4088_f4096.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "overhand_right",
+      "window_start": 4088,
+      "window_end": 4096,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_118_uppercut_left_f4098_f4104.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_left",
+      "window_start": 4098,
+      "window_end": 4104,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_119_hook_right_f4109_f4116.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4109,
+      "window_end": 4116,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_120_uppercut_right_f4141_f4149.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 4141,
+      "window_end": 4149,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_121_hook_left_f4149_f4155.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4149,
+      "window_end": 4155,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_122_hook_right_f4156_f4161.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4156,
+      "window_end": 4161,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_123_hook_right_f4158_f4165.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4158,
+      "window_end": 4165,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_124_hook_left_f4162_f4170.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4162,
+      "window_end": 4170,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_125_uppercut_right_f4186_f4194.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 4186,
+      "window_end": 4194,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_126_hook_right_f4200_f4208.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4200,
+      "window_end": 4208,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_127_jab_left_f4394_f4400.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 4394,
+      "window_end": 4400,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_128_cross_right_f4400_f4406.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 4400,
+      "window_end": 4406,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_129_jab_left_f4450_f4457.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 4450,
+      "window_end": 4457,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_130_uppercut_right_f4461_f4468.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 4461,
+      "window_end": 4468,
+      "label": null
+    },
+    {
+      "clip": "R3_f0_131_hook_left_f4469_f4476.mp4",
+      "round": 3,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4469,
+      "window_end": 4476,
+      "label": null
+    },
+    {
+      "clip": "R3_f1_132_overhand_right_f4473_f4480.mp4",
+      "round": 3,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 4473,
+      "window_end": 4480,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_001_jab_left_f0019_f0027.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 19,
+      "window_end": 27,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_002_jab_left_f0023_f0030.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 23,
+      "window_end": 30,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_003_jab_left_f0031_f0038.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 31,
+      "window_end": 38,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_004_jab_left_f0033_f0040.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 33,
+      "window_end": 40,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_005_jab_left_f0063_f0070.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 63,
+      "window_end": 70,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_006_jab_left_f0075_f0081.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 75,
+      "window_end": 81,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_007_uppercut_right_f0082_f0090.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 82,
+      "window_end": 90,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_008_jab_left_f0101_f0109.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 101,
+      "window_end": 109,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_009_jab_left_f0104_f0110.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 104,
+      "window_end": 110,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_010_jab_left_f0113_f0120.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 113,
+      "window_end": 120,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_011_jab_left_f0116_f0122.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 116,
+      "window_end": 122,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_012_hook_left_f0121_f0129.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 121,
+      "window_end": 129,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_013_hook_right_f0124_f0130.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 124,
+      "window_end": 130,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_014_hook_left_f0131_f0136.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 131,
+      "window_end": 136,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_015_jab_left_f0252_f0258.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 252,
+      "window_end": 258,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_016_uppercut_left_f0255_f0262.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_left",
+      "window_start": 255,
+      "window_end": 262,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_017_overhand_right_f0263_f0269.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 263,
+      "window_end": 269,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_018_jab_left_f0329_f0335.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 329,
+      "window_end": 335,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_019_jab_left_f0362_f0370.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 362,
+      "window_end": 370,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_020_jab_left_f0378_f0384.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 378,
+      "window_end": 384,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_021_jab_left_f0389_f0396.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 389,
+      "window_end": 396,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_022_hook_left_f0397_f0405.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 397,
+      "window_end": 405,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_023_jab_left_f0401_f0407.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 401,
+      "window_end": 407,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_024_cross_right_f0408_f0414.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 408,
+      "window_end": 414,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_025_jab_left_f0472_f0478.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 472,
+      "window_end": 478,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_026_jab_left_f0495_f0502.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 495,
+      "window_end": 502,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_027_overhand_right_f0500_f0507.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 500,
+      "window_end": 507,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_028_hook_left_f0508_f0514.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 508,
+      "window_end": 514,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_029_hook_right_f0518_f0524.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 518,
+      "window_end": 524,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_030_hook_left_f0527_f0532.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 527,
+      "window_end": 532,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_031_uppercut_right_f0533_f0538.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 533,
+      "window_end": 538,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_032_hook_left_f0535_f0543.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 535,
+      "window_end": 543,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_033_hook_left_f0539_f0548.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 539,
+      "window_end": 548,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_034_jab_left_f0567_f0573.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 567,
+      "window_end": 573,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_035_overhand_right_f0575_f0582.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 575,
+      "window_end": 582,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_036_hook_right_f0603_f0611.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 603,
+      "window_end": 611,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_037_uppercut_right_f0633_f0640.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 633,
+      "window_end": 640,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_038_hook_left_f0641_f0647.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 641,
+      "window_end": 647,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_039_uppercut_right_f0643_f0651.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 643,
+      "window_end": 651,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_040_hook_left_f0661_f0668.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 661,
+      "window_end": 668,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_041_uppercut_right_f0667_f0674.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 667,
+      "window_end": 674,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_042_uppercut_right_f0674_f0681.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 674,
+      "window_end": 681,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_043_hook_left_f0675_f0681.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 675,
+      "window_end": 681,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_044_uppercut_right_f0693_f0701.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 693,
+      "window_end": 701,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_045_uppercut_right_f0716_f0724.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 716,
+      "window_end": 724,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_046_uppercut_right_f0727_f0736.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 727,
+      "window_end": 736,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_047_uppercut_right_f0736_f0741.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 736,
+      "window_end": 741,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_048_hook_left_f0741_f0747.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 741,
+      "window_end": 747,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_049_hook_right_f0748_f0755.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 748,
+      "window_end": 755,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_050_uppercut_right_f0755_f0765.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 755,
+      "window_end": 765,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_051_hook_right_f0798_f0806.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 798,
+      "window_end": 806,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_052_jab_left_f1054_f1062.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 1054,
+      "window_end": 1062,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_053_jab_left_f1057_f1063.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 1057,
+      "window_end": 1063,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_054_jab_left_f1065_f1073.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 1065,
+      "window_end": 1073,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_055_jab_left_f1102_f1107.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 1102,
+      "window_end": 1107,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_056_jab_left_f1102_f1107.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 1102,
+      "window_end": 1107,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_057_overhand_right_f1108_f1114.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "overhand_right",
+      "window_start": 1108,
+      "window_end": 1114,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_058_overhand_right_f1108_f1114.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 1108,
+      "window_end": 1114,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_059_hook_left_f1115_f1121.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1115,
+      "window_end": 1121,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_060_uppercut_right_f1130_f1138.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 1130,
+      "window_end": 1138,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_061_hook_left_f1145_f1151.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 1145,
+      "window_end": 1151,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_062_hook_right_f1161_f1168.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1161,
+      "window_end": 1168,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_063_uppercut_left_f1170_f1178.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_left",
+      "window_start": 1170,
+      "window_end": 1178,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_064_uppercut_right_f1195_f1202.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 1195,
+      "window_end": 1202,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_065_hook_right_f1208_f1216.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1208,
+      "window_end": 1216,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_066_uppercut_left_f1215_f1223.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_left",
+      "window_start": 1215,
+      "window_end": 1223,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_067_uppercut_right_f1226_f1233.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 1226,
+      "window_end": 1233,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_068_hook_left_f1234_f1239.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1234,
+      "window_end": 1239,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_069_cross_right_f1243_f1248.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 1243,
+      "window_end": 1248,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_070_hook_left_f1262_f1269.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 1262,
+      "window_end": 1269,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_071_uppercut_right_f1274_f1283.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 1274,
+      "window_end": 1283,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_072_hook_right_f1286_f1291.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 1286,
+      "window_end": 1291,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_073_hook_left_f1292_f1298.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1292,
+      "window_end": 1298,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_074_hook_right_f1300_f1306.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 1300,
+      "window_end": 1306,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_075_uppercut_right_f1303_f1310.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 1303,
+      "window_end": 1310,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_076_hook_right_f1313_f1321.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1313,
+      "window_end": 1321,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_077_uppercut_right_f1341_f1350.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 1341,
+      "window_end": 1350,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_078_hook_right_f1357_f1365.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1357,
+      "window_end": 1365,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_079_uppercut_right_f1381_f1389.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 1381,
+      "window_end": 1389,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_080_hook_left_f1413_f1420.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1413,
+      "window_end": 1420,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_081_hook_right_f1418_f1424.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1418,
+      "window_end": 1424,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_082_hook_left_f1422_f1428.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1422,
+      "window_end": 1428,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_083_hook_left_f1430_f1436.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1430,
+      "window_end": 1436,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_084_jab_left_f3156_f3164.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 3156,
+      "window_end": 3164,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_085_jab_left_f3166_f3172.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 3166,
+      "window_end": 3172,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_086_jab_left_f3225_f3231.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3225,
+      "window_end": 3231,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_087_jab_left_f3234_f3240.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3234,
+      "window_end": 3240,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_088_hook_left_f3314_f3320.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3314,
+      "window_end": 3320,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_089_uppercut_right_f3320_f3326.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3320,
+      "window_end": 3326,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_090_hook_left_f3327_f3333.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3327,
+      "window_end": 3333,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_091_jab_left_f3338_f3344.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3338,
+      "window_end": 3344,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_092_hook_right_f3345_f3351.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 3345,
+      "window_end": 3351,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_093_overhand_left_f3354_f3362.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "overhand_left",
+      "window_start": 3354,
+      "window_end": 3362,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_094_hook_right_f3383_f3390.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3383,
+      "window_end": 3390,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_095_hook_left_f3391_f3397.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3391,
+      "window_end": 3397,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_096_uppercut_right_f3412_f3421.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3412,
+      "window_end": 3421,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_097_uppercut_right_f3436_f3445.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3436,
+      "window_end": 3445,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_098_uppercut_right_f3437_f3444.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 3437,
+      "window_end": 3444,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_099_hook_left_f3444_f3450.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3444,
+      "window_end": 3450,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_100_hook_left_f3452_f3459.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3452,
+      "window_end": 3459,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_101_hook_right_f3452_f3458.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3452,
+      "window_end": 3458,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_102_hook_right_f3476_f3483.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 3476,
+      "window_end": 3483,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_103_hook_right_f3488_f3495.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3488,
+      "window_end": 3495,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_104_hook_right_f3502_f3512.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 3502,
+      "window_end": 3512,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_105_hook_right_f3516_f3524.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 3516,
+      "window_end": 3524,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_106_hook_right_f3517_f3523.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3517,
+      "window_end": 3523,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_107_hook_right_f3555_f3561.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3555,
+      "window_end": 3561,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_108_hook_right_f3581_f3588.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3581,
+      "window_end": 3588,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_109_jab_left_f3733_f3742.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3733,
+      "window_end": 3742,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_110_jab_left_f3802_f3808.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3802,
+      "window_end": 3808,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_111_jab_left_f3803_f3809.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 3803,
+      "window_end": 3809,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_112_jab_left_f3812_f3820.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 3812,
+      "window_end": 3820,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_113_jab_left_f3935_f3941.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3935,
+      "window_end": 3941,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_114_cross_right_f3941_f3947.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 3941,
+      "window_end": 3947,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_115_jab_left_f3964_f3970.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3964,
+      "window_end": 3970,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_116_jab_left_f3974_f3981.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3974,
+      "window_end": 3981,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_117_hook_left_f3977_f3983.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3977,
+      "window_end": 3983,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_118_hook_right_f3989_f3996.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3989,
+      "window_end": 3996,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_119_jab_left_f4015_f4020.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 4015,
+      "window_end": 4020,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_120_jab_left_f4016_f4022.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 4016,
+      "window_end": 4022,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_121_hook_right_f4021_f4027.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4021,
+      "window_end": 4027,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_122_hook_left_f4028_f4034.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4028,
+      "window_end": 4034,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_123_hook_right_f4040_f4045.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4040,
+      "window_end": 4045,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_124_hook_right_f4064_f4073.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4064,
+      "window_end": 4073,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_125_uppercut_right_f4147_f4154.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 4147,
+      "window_end": 4154,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_126_uppercut_right_f4196_f4203.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 4196,
+      "window_end": 4203,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_127_jab_left_f4298_f4306.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 4298,
+      "window_end": 4306,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_128_overhand_right_f4302_f4311.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 4302,
+      "window_end": 4311,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_129_hook_left_f4310_f4317.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4310,
+      "window_end": 4317,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_130_uppercut_right_f4319_f4326.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 4319,
+      "window_end": 4326,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_131_hook_left_f4327_f4333.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4327,
+      "window_end": 4333,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_132_hook_right_f4334_f4340.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4334,
+      "window_end": 4340,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_133_hook_left_f4340_f4345.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4340,
+      "window_end": 4345,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_134_uppercut_right_f4368_f4373.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 4368,
+      "window_end": 4373,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_135_hook_left_f4374_f4380.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 4374,
+      "window_end": 4380,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_136_hook_right_f4381_f4385.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4381,
+      "window_end": 4385,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_137_hook_right_f4397_f4404.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4397,
+      "window_end": 4404,
+      "label": null
+    },
+    {
+      "clip": "R4_f0_138_hook_right_f4412_f4418.mp4",
+      "round": 4,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4412,
+      "window_end": 4418,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_139_hook_right_f4412_f4418.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4412,
+      "window_end": 4418,
+      "label": null
+    },
+    {
+      "clip": "R4_f1_140_hook_right_f4426_f4432.mp4",
+      "round": 4,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4426,
+      "window_end": 4432,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_001_jab_left_f0086_f0091.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 86,
+      "window_end": 91,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_002_jab_left_f0089_f0095.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 89,
+      "window_end": 95,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_003_cross_right_f0090_f0096.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 90,
+      "window_end": 96,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_004_hook_left_f0096_f0104.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 96,
+      "window_end": 104,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_005_hook_right_f0101_f0108.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 101,
+      "window_end": 108,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_006_jab_left_f0149_f0154.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 149,
+      "window_end": 154,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_007_jab_left_f0150_f0156.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 150,
+      "window_end": 156,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_008_hook_right_f0156_f0162.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 156,
+      "window_end": 162,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_009_hook_right_f0181_f0188.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 181,
+      "window_end": 188,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_010_uppercut_left_f0216_f0222.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "uppercut_left",
+      "window_start": 216,
+      "window_end": 222,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_011_hook_right_f0230_f0237.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 230,
+      "window_end": 237,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_012_hook_right_f0243_f0251.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 243,
+      "window_end": 251,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_013_hook_right_f0253_f0261.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 253,
+      "window_end": 261,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_014_jab_left_f0405_f0409.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 405,
+      "window_end": 409,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_015_jab_left_f0406_f0413.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 406,
+      "window_end": 413,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_016_overhand_right_f0408_f0414.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "overhand_right",
+      "window_start": 408,
+      "window_end": 414,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_017_jab_left_f0417_f0424.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 417,
+      "window_end": 424,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_018_hook_right_f0418_f0424.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 418,
+      "window_end": 424,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_019_hook_left_f0468_f0473.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 468,
+      "window_end": 473,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_020_hook_right_f0487_f0493.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 487,
+      "window_end": 493,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_021_hook_left_f0492_f0498.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 492,
+      "window_end": 498,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_022_hook_right_f0502_f0508.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 502,
+      "window_end": 508,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_023_uppercut_right_f0508_f0515.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 508,
+      "window_end": 515,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_024_hook_right_f0520_f0526.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 520,
+      "window_end": 526,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_025_hook_right_f0536_f0544.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 536,
+      "window_end": 544,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_026_jab_left_f0822_f0828.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 822,
+      "window_end": 828,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_027_jab_left_f0825_f0832.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 825,
+      "window_end": 832,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_028_jab_left_f0834_f0840.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 834,
+      "window_end": 840,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_029_jab_left_f0875_f0879.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 875,
+      "window_end": 879,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_030_uppercut_right_f0880_f0885.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 880,
+      "window_end": 885,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_031_hook_left_f0886_f0892.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 886,
+      "window_end": 892,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_032_jab_left_f0897_f0903.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 897,
+      "window_end": 903,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_033_hook_right_f0902_f0910.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 902,
+      "window_end": 910,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_034_uppercut_right_f0934_f0941.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 934,
+      "window_end": 941,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_035_uppercut_left_f0942_f0948.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_left",
+      "window_start": 942,
+      "window_end": 948,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_036_uppercut_right_f0948_f0954.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 948,
+      "window_end": 954,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_037_hook_left_f0950_f0956.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 950,
+      "window_end": 956,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_038_hook_left_f0955_f0962.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 955,
+      "window_end": 962,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_039_hook_right_f0975_f0981.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 975,
+      "window_end": 981,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_040_hook_left_f0982_f0987.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 982,
+      "window_end": 987,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_041_hook_left_f0990_f0997.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 990,
+      "window_end": 997,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_042_jab_left_f1005_f1012.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 1005,
+      "window_end": 1012,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_043_hook_right_f1017_f1025.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1017,
+      "window_end": 1025,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_044_uppercut_right_f1042_f1048.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 1042,
+      "window_end": 1048,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_045_hook_left_f1048_f1053.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 1048,
+      "window_end": 1053,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_046_hook_right_f1053_f1058.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1053,
+      "window_end": 1058,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_047_hook_right_f1061_f1067.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 1061,
+      "window_end": 1067,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_048_uppercut_left_f1068_f1074.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_left",
+      "window_start": 1068,
+      "window_end": 1074,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_049_hook_right_f1074_f1080.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 1074,
+      "window_end": 1080,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_050_hook_right_f1076_f1082.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1076,
+      "window_end": 1082,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_051_hook_left_f1081_f1086.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 1081,
+      "window_end": 1086,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_052_hook_right_f1089_f1095.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1089,
+      "window_end": 1095,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_053_hook_left_f1094_f1099.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 1094,
+      "window_end": 1099,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_054_uppercut_right_f1106_f1111.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 1106,
+      "window_end": 1111,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_055_hook_left_f1113_f1119.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 1113,
+      "window_end": 1119,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_056_hook_right_f1133_f1139.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1133,
+      "window_end": 1139,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_057_hook_right_f1156_f1164.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1156,
+      "window_end": 1164,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_058_jab_left_f1415_f1421.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 1415,
+      "window_end": 1421,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_059_jab_left_f1450_f1457.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 1450,
+      "window_end": 1457,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_060_jab_left_f1453_f1459.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 1453,
+      "window_end": 1459,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_061_jab_left_f1462_f1468.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 1462,
+      "window_end": 1468,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_062_jab_left_f1492_f1499.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 1492,
+      "window_end": 1499,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_063_hook_left_f3004_f3013.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3004,
+      "window_end": 3013,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_064_hook_left_f3014_f3021.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3014,
+      "window_end": 3021,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_065_hook_right_f3033_f3039.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3033,
+      "window_end": 3039,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_066_hook_right_f3062_f3068.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3062,
+      "window_end": 3068,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_067_uppercut_right_f3065_f3072.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3065,
+      "window_end": 3072,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_068_hook_right_f3080_f3086.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3080,
+      "window_end": 3086,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_069_hook_right_f3110_f3117.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 3110,
+      "window_end": 3117,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_070_hook_right_f3138_f3146.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 3138,
+      "window_end": 3146,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_071_hook_left_f3147_f3154.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3147,
+      "window_end": 3154,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_072_hook_right_f3151_f3158.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3151,
+      "window_end": 3158,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_073_jab_left_f3405_f3413.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 3405,
+      "window_end": 3413,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_074_jab_left_f3443_f3448.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3443,
+      "window_end": 3448,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_075_cross_right_f3449_f3454.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 3449,
+      "window_end": 3454,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_076_jab_left_f3526_f3530.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3526,
+      "window_end": 3530,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_077_cross_right_f3531_f3537.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 3531,
+      "window_end": 3537,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_078_jab_left_f3541_f3548.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3541,
+      "window_end": 3548,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_079_uppercut_right_f3550_f3556.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3550,
+      "window_end": 3556,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_080_hook_left_f3557_f3563.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3557,
+      "window_end": 3563,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_081_jab_left_f3569_f3575.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3569,
+      "window_end": 3575,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_082_hook_right_f3575_f3581.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 3575,
+      "window_end": 3581,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_083_jab_left_f3582_f3589.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3582,
+      "window_end": 3589,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_084_hook_left_f3587_f3595.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3587,
+      "window_end": 3595,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_085_uppercut_right_f3600_f3606.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3600,
+      "window_end": 3606,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_086_hook_right_f3607_f3615.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3607,
+      "window_end": 3615,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_087_hook_left_f3616_f3623.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3616,
+      "window_end": 3623,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_088_hook_right_f3630_f3637.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3630,
+      "window_end": 3637,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_089_hook_right_f3652_f3659.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3652,
+      "window_end": 3659,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_090_uppercut_right_f3688_f3696.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 3688,
+      "window_end": 3696,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_091_hook_right_f3701_f3707.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3701,
+      "window_end": 3707,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_092_hook_right_f3719_f3725.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 3719,
+      "window_end": 3725,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_093_hook_left_f3726_f3733.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3726,
+      "window_end": 3733,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_094_hook_right_f3743_f3750.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3743,
+      "window_end": 3750,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_095_hook_left_f3751_f3757.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3751,
+      "window_end": 3757,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_096_hook_left_f3761_f3767.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3761,
+      "window_end": 3767,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_097_hook_right_f3785_f3792.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3785,
+      "window_end": 3792,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_098_hook_right_f3798_f3805.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3798,
+      "window_end": 3805,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_099_hook_right_f3832_f3837.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3832,
+      "window_end": 3837,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_100_jab_left_f4054_f4061.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 4054,
+      "window_end": 4061,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_101_jab_left_f4057_f4063.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 4057,
+      "window_end": 4063,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_102_hook_right_f4067_f4072.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4067,
+      "window_end": 4072,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_103_hook_left_f4069_f4076.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4069,
+      "window_end": 4076,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_104_uppercut_right_f4097_f4107.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 4097,
+      "window_end": 4107,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_105_hook_right_f4120_f4127.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4120,
+      "window_end": 4127,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_106_uppercut_right_f4141_f4148.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 4141,
+      "window_end": 4148,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_107_hook_left_f4146_f4153.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4146,
+      "window_end": 4153,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_108_hook_right_f4162_f4168.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4162,
+      "window_end": 4168,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_109_hook_right_f4204_f4211.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4204,
+      "window_end": 4211,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_110_hook_right_f4225_f4230.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4225,
+      "window_end": 4230,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_111_hook_right_f4273_f4278.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4273,
+      "window_end": 4278,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_112_hook_left_f4274_f4278.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4274,
+      "window_end": 4278,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_113_hook_left_f4281_f4286.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4281,
+      "window_end": 4286,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_114_hook_left_f4290_f4294.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4290,
+      "window_end": 4294,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_115_hook_left_f4297_f4302.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4297,
+      "window_end": 4302,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_116_hook_right_f4299_f4305.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4299,
+      "window_end": 4305,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_117_hook_right_f4381_f4388.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4381,
+      "window_end": 4388,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_118_uppercut_right_f4408_f4415.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 4408,
+      "window_end": 4415,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_119_hook_left_f4416_f4424.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4416,
+      "window_end": 4424,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_120_hook_right_f4420_f4426.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4420,
+      "window_end": 4426,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_121_hook_right_f4426_f4433.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4426,
+      "window_end": 4433,
+      "label": null
+    },
+    {
+      "clip": "R5_f1_122_hook_right_f4460_f4466.mp4",
+      "round": 5,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4460,
+      "window_end": 4466,
+      "label": null
+    },
+    {
+      "clip": "R5_f0_123_uppercut_right_f4468_f4476.mp4",
+      "round": 5,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 4468,
+      "window_end": 4476,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_001_uppercut_right_f0070_f0076.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 70,
+      "window_end": 76,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_002_jab_left_f0090_f0096.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 90,
+      "window_end": 96,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_003_jab_left_f0116_f0123.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 116,
+      "window_end": 123,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_004_jab_left_f0118_f0126.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 118,
+      "window_end": 126,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_005_cross_right_f0123_f0130.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 123,
+      "window_end": 130,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_006_jab_left_f0146_f0153.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 146,
+      "window_end": 153,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_007_overhand_right_f0153_f0160.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "overhand_right",
+      "window_start": 153,
+      "window_end": 160,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_008_jab_left_f0161_f0169.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 161,
+      "window_end": 169,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_009_hook_left_f0170_f0178.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 170,
+      "window_end": 178,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_010_uppercut_right_f0178_f0185.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 178,
+      "window_end": 185,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_011_jab_left_f0189_f0196.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 189,
+      "window_end": 196,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_012_overhand_right_f0190_f0197.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 190,
+      "window_end": 197,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_013_uppercut_left_f0200_f0207.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "uppercut_left",
+      "window_start": 200,
+      "window_end": 207,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_014_hook_left_f0211_f0218.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 211,
+      "window_end": 218,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_015_hook_right_f0227_f0232.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 227,
+      "window_end": 232,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_016_jab_left_f0234_f0241.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 234,
+      "window_end": 241,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_017_jab_left_f0235_f0241.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 235,
+      "window_end": 241,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_018_overhand_right_f0243_f0250.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "overhand_right",
+      "window_start": 243,
+      "window_end": 250,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_019_overhand_right_f0247_f0253.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 247,
+      "window_end": 253,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_020_hook_left_f0252_f0260.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 252,
+      "window_end": 260,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_021_jab_left_f0263_f0270.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 263,
+      "window_end": 270,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_022_overhand_right_f0271_f0278.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "overhand_right",
+      "window_start": 271,
+      "window_end": 278,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_023_jab_left_f0277_f0285.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 277,
+      "window_end": 285,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_024_hook_left_f0283_f0289.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 283,
+      "window_end": 289,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_025_hook_right_f0292_f0298.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 292,
+      "window_end": 298,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_026_hook_right_f0443_f0449.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 443,
+      "window_end": 449,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_027_jab_left_f0579_f0587.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 579,
+      "window_end": 587,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_028_cross_right_f0587_f0592.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 587,
+      "window_end": 592,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_029_hook_left_f0588_f0595.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 588,
+      "window_end": 595,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_030_hook_right_f0600_f0609.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 600,
+      "window_end": 609,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_031_hook_right_f0613_f0622.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 613,
+      "window_end": 622,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_032_hook_right_f0616_f0624.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 616,
+      "window_end": 624,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_033_hook_right_f0629_f0639.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 629,
+      "window_end": 639,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_034_jab_left_f0644_f0652.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 644,
+      "window_end": 652,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_035_uppercut_right_f0654_f0661.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 654,
+      "window_end": 661,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_036_hook_left_f0661_f0665.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 661,
+      "window_end": 665,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_037_uppercut_right_f0665_f0674.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 665,
+      "window_end": 674,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_038_hook_right_f0665_f0670.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 665,
+      "window_end": 670,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_039_hook_left_f0672_f0677.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 672,
+      "window_end": 677,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_040_hook_right_f0690_f0700.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 690,
+      "window_end": 700,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_041_hook_right_f0699_f0704.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 699,
+      "window_end": 704,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_042_jab_left_f0834_f0839.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 834,
+      "window_end": 839,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_043_jab_left_f0835_f0843.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 835,
+      "window_end": 843,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_044_overhand_right_f0840_f0847.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "overhand_right",
+      "window_start": 840,
+      "window_end": 847,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_045_overhand_right_f0845_f0852.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 845,
+      "window_end": 852,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_046_hook_left_f0848_f0854.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 848,
+      "window_end": 854,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_047_jab_left_f0875_f0881.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 875,
+      "window_end": 881,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_048_uppercut_right_f0882_f0890.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 882,
+      "window_end": 890,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_049_hook_right_f0894_f0900.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 894,
+      "window_end": 900,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_050_hook_left_f0918_f0925.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 918,
+      "window_end": 925,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_051_hook_right_f0923_f0932.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 923,
+      "window_end": 932,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_052_hook_right_f0953_f0961.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 953,
+      "window_end": 961,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_053_cross_right_f1014_f1021.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 1014,
+      "window_end": 1021,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_054_jab_left_f1189_f1194.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 1189,
+      "window_end": 1194,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_055_jab_left_f1189_f1193.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 1189,
+      "window_end": 1193,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_056_overhand_right_f1194_f1200.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 1194,
+      "window_end": 1200,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_057_hook_right_f1273_f1280.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1273,
+      "window_end": 1280,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_058_hook_right_f1296_f1303.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1296,
+      "window_end": 1303,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_059_hook_right_f1338_f1344.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 1338,
+      "window_end": 1344,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_060_jab_left_f3059_f3064.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3059,
+      "window_end": 3064,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_061_cross_right_f3064_f3070.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 3064,
+      "window_end": 3070,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_062_hook_left_f3073_f3080.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3073,
+      "window_end": 3080,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_063_jab_left_f3109_f3115.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3109,
+      "window_end": 3115,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_064_jab_left_f3111_f3116.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "jab_left",
+      "window_start": 3111,
+      "window_end": 3116,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_065_uppercut_right_f3116_f3122.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "uppercut_right",
+      "window_start": 3116,
+      "window_end": 3122,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_066_hook_right_f3117_f3122.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3117,
+      "window_end": 3122,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_067_hook_left_f3124_f3130.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3124,
+      "window_end": 3130,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_068_hook_right_f3144_f3150.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 3144,
+      "window_end": 3150,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_069_hook_right_f3168_f3175.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3168,
+      "window_end": 3175,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_070_hook_right_f3188_f3195.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3188,
+      "window_end": 3195,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_071_hook_right_f3230_f3237.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3230,
+      "window_end": 3237,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_072_hook_left_f3434_f3441.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3434,
+      "window_end": 3441,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_073_hook_right_f3443_f3450.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3443,
+      "window_end": 3450,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_074_hook_left_f3485_f3491.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 3485,
+      "window_end": 3491,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_075_hook_right_f3745_f3751.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3745,
+      "window_end": 3751,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_076_jab_left_f3871_f3876.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "jab_left",
+      "window_start": 3871,
+      "window_end": 3876,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_077_overhand_right_f3876_f3883.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "overhand_right",
+      "window_start": 3876,
+      "window_end": 3883,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_078_hook_left_f3887_f3894.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 3887,
+      "window_end": 3894,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_079_uppercut_left_f3939_f3946.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "uppercut_left",
+      "window_start": 3939,
+      "window_end": 3946,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_080_hook_right_f3963_f3969.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 3963,
+      "window_end": 3969,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_081_hook_left_f4205_f4213.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4205,
+      "window_end": 4213,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_082_uppercut_right_f4207_f4214.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "uppercut_right",
+      "window_start": 4207,
+      "window_end": 4214,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_083_hook_right_f4213_f4218.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4213,
+      "window_end": 4218,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_084_hook_left_f4213_f4219.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 4213,
+      "window_end": 4219,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_085_hook_right_f4220_f4226.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4220,
+      "window_end": 4226,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_086_hook_right_f4271_f4279.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4271,
+      "window_end": 4279,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_087_hook_right_f4316_f4320.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4316,
+      "window_end": 4320,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_088_hook_left_f4322_f4327.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4322,
+      "window_end": 4327,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_089_hook_right_f4323_f4330.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4323,
+      "window_end": 4330,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_090_hook_right_f4339_f4348.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4339,
+      "window_end": 4348,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_091_hook_left_f4362_f4368.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4362,
+      "window_end": 4368,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_092_hook_left_f4370_f4375.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4370,
+      "window_end": 4375,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_093_hook_left_f4378_f4382.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4378,
+      "window_end": 4382,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_094_uppercut_left_f4378_f4388.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "uppercut_left",
+      "window_start": 4378,
+      "window_end": 4388,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_095_uppercut_left_f4391_f4397.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "uppercut_left",
+      "window_start": 4391,
+      "window_end": 4397,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_096_hook_right_f4402_f4410.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_right",
+      "window_start": 4402,
+      "window_end": 4410,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_097_hook_left_f4412_f4419.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4412,
+      "window_end": 4419,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_098_hook_right_f4420_f4425.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_right",
+      "window_start": 4420,
+      "window_end": 4425,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_099_cross_right_f4426_f4432.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "cross_right",
+      "window_start": 4426,
+      "window_end": 4432,
+      "label": null
+    },
+    {
+      "clip": "R8_f0_100_hook_left_f4434_f4441.mp4",
+      "round": 8,
+      "fighter_id": 0,
+      "action": "hook_left",
+      "window_start": 4434,
+      "window_end": 4441,
+      "label": null
+    },
+    {
+      "clip": "R8_f1_101_hook_left_f4447_f4456.mp4",
+      "round": 8,
+      "fighter_id": 1,
+      "action": "hook_left",
+      "window_start": 4447,
+      "window_end": 4456,
+      "label": null
+    }
+  ]
+}
