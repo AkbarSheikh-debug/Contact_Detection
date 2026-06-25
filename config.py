@@ -126,7 +126,17 @@ EXTENSION_WEIGHT     = 0.15         # arm extension pattern
 DEPTH_WEIGHT         = 0.15         # 3D depth convergence
 CONFIDENCE_WEIGHT    = 0.15         # ASFormer action confidence boost
 
-# ─── 70-Joint Skeleton Indices (COCO body subset: joints 0-16) ───────────────
+# ─── 70-Joint Skeleton Indices (MHR70, NOT plain COCO-17) ────────────────────
+# CORRECTED: this was previously labeled "COCO body subset: joints 0-16" with
+# wrists at 9/10 -- WRONG for this skeleton format. detectors/fusion/v9.py
+# already discovered (for the *_Fixed_05062026 export) that indices 9/10 are
+# HIPS, and wrists live out at 41 (right) / 62 (left). Verified directly here
+# too: elbow-to-idx10 distance has CV=0.29 across 300 frames (not a rigid
+# forearm), elbow-to-idx41 distance has CV=0.03 (stable forearm length).
+# Knee/ankle indices are NOT known for this skeleton (nothing in the repo
+# documents them, and they are not 13-16 the way COCO would have it -- that
+# range is unverified/unused now, see RAW_JOINTS in extract_keypoint_dataset.py
+# which only includes indices verified above, not knees/ankles).
 KP70_NOSE            = 0
 KP70_LEFT_EYE        = 1
 KP70_RIGHT_EYE       = 2
@@ -136,10 +146,15 @@ KP70_LEFT_SHOULDER   = 5
 KP70_RIGHT_SHOULDER  = 6
 KP70_LEFT_ELBOW      = 7
 KP70_RIGHT_ELBOW     = 8
-KP70_LEFT_WRIST      = 9
-KP70_RIGHT_WRIST     = 10
-KP70_LEFT_HIP        = 11
-KP70_RIGHT_HIP       = 12
+KP70_LEFT_HIP        = 9    # L/R assignment here is arbitrary but harmless --
+KP70_RIGHT_HIP       = 10   # every consumer (hip_center, torso_center) sums L+R symmetrically
+KP70_LEFT_WRIST      = 62
+KP70_RIGHT_WRIST     = 41
+
+# UNVERIFIED -- kept only so rendering/render_impact_video.py's legacy skeleton
+# drawing (not used by this session's pipeline) still imports without error.
+# Do NOT use these for any new feature extraction; their old values (13-16)
+# were part of the same disproven COCO-17 assumption as the old wrist indices.
 KP70_LEFT_KNEE       = 13
 KP70_RIGHT_KNEE      = 14
 KP70_LEFT_ANKLE      = 15

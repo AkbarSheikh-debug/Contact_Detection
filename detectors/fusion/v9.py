@@ -360,7 +360,7 @@ def score_action(act, persons, ce_by_pair, onset, fps):
                  bbox_iou=round(iou, 3), wrist_peak=round(peak, 3))
     return dict(frame=best_f, score=fused, gates=gates, contact_region=region,
                 striker_id=sid, receiver_id=rid, action=act["action"],
-                confidence=s_con)
+                confidence=s_con, window_start=act["window_start"], window_end=act["window_end"])
 
 def nms(events, cooldown=18):
     kept = []
@@ -403,10 +403,10 @@ def _draw_marker(frame, mk, score, frozen=False):
         cv2.circle(frame, mk, 40, (0, 255, 255), 2, cv2.LINE_AA)
 
 
-def render_video(folder, video_path, persons, kept, fps, freeze_sec=1.5):
+def render_video(folder, video_path, persons, kept, fps, freeze_sec=1.5, tag="v9"):
     import cv2
     base = os.path.splitext(os.path.basename(video_path))[0]
-    suffix = "_impacts_v9_frozen" if freeze_sec > 0 else "_impacts_v9"
+    suffix = f"_impacts_{tag}_frozen" if freeze_sec > 0 else f"_impacts_{tag}"
     tmp = os.path.join(folder, f"{base}_v9_tmp.mp4")
     out_path = os.path.join(folder, f"{base}{suffix}.mp4")
     cap = cv2.VideoCapture(video_path)
@@ -463,12 +463,12 @@ def render_video(folder, video_path, persons, kept, fps, freeze_sec=1.5):
     return out_path
 
 
-def save_impact_shots(folder, video_path, persons, kept, fps, max_w=820):
+def save_impact_shots(folder, video_path, persons, kept, fps, max_w=820, tag="v9"):
     """Save one annotated still per impact (cropped around both fighters) so the
     contact can be visually verified.  Returns the shots directory."""
     import cv2
     base = os.path.splitext(os.path.basename(video_path))[0]
-    shots_dir = os.path.join(folder, "impacts_v9_shots")
+    shots_dir = os.path.join(folder, f"impacts_{tag}_shots")
     os.makedirs(shots_dir, exist_ok=True)
     for old in glob.glob(os.path.join(shots_dir, "*.jpg")):   # clear stale shots
         os.remove(old)
@@ -525,12 +525,12 @@ def save_impact_shots(folder, video_path, persons, kept, fps, max_w=820):
     return shots_dir
 
 
-def save_impact_strips(folder, video_path, persons, kept, fps, off=6, panel_w=300):
+def save_impact_strips(folder, video_path, persons, kept, fps, off=6, panel_w=300, tag="v9"):
     """Save a 3-panel strip per impact: [t-off | t(impact) | t+off], same crop box
     so the REACTION is visible (head snap / body fold = real hit; none = slip/clinch).
     This gives the VLM the temporal context a single still lacks."""
     import cv2
-    strips_dir = os.path.join(folder, "impacts_v9_strips")
+    strips_dir = os.path.join(folder, f"impacts_{tag}_strips")
     os.makedirs(strips_dir, exist_ok=True)
     for old in glob.glob(os.path.join(strips_dir, "*.jpg")):
         os.remove(old)
@@ -614,7 +614,8 @@ def find_files(folder):
     return sam3d[0], fa[0], (vids[0] if vids else None)
 
 def run(folder, thr, cooldown, use_audio, top, make_video=False, freeze_sec=1.5,
-        make_shots=False):
+        make_shots=False, out_folder=None):
+    out_folder = out_folder or folder
     sam3d_p, fa_p, vid = find_files(folder)
     name = os.path.basename(os.path.basename(sam3d_p)).replace("_sam3d.json", "")
     print(f"\n[v9] === {os.path.basename(folder)} ===")
@@ -677,9 +678,11 @@ def run(folder, thr, cooldown, use_audio, top, make_video=False, freeze_sec=1.5,
             "impact_score": round(e["score"], 4),
             "contact_region": e["contact_region"], "action": e["action"],
             "striker_id": e["striker_id"], "receiver_id": e["receiver_id"],
+            "window_start": e["window_start"], "window_end": e["window_end"],
         } for e in scored],
     }
-    out_path = os.path.join(folder, f"{name}_impacts_v9.json")
+    os.makedirs(out_folder, exist_ok=True)
+    out_path = os.path.join(out_folder, f"{name}_impacts_v9.json")
     json.dump(out, open(out_path, "w"), indent=2)
     print(f"\n[v9] saved -> {out_path}")
     # mirror into repo outputs/ too
@@ -689,12 +692,12 @@ def run(folder, thr, cooldown, use_audio, top, make_video=False, freeze_sec=1.5,
     json.dump(out, open(mirror, "w"), indent=2)
     print(f"[v9] mirror  -> {os.path.abspath(mirror)}")
     if make_shots and vid:
-        save_impact_shots(folder, vid, persons, kept, fps)
-        save_impact_strips(folder, vid, persons, kept, fps)
+        save_impact_shots(out_folder, vid, persons, kept, fps)
+        save_impact_strips(out_folder, vid, persons, kept, fps)
     elif make_shots:
         print("[v9] no raw video found in folder; cannot save shots.")
     if make_video and vid:
-        render_video(folder, vid, persons, kept, fps, freeze_sec)
+        render_video(out_folder, vid, persons, kept, fps, freeze_sec)
     elif make_video:
         print("[v9] no raw video found in folder; cannot render.")
     return out_path
@@ -712,6 +715,8 @@ def main():
                     help="seconds to freeze each impact frame for review (0=off)")
     ap.add_argument("--shots", action="store_true",
                     help="save one annotated screenshot per impact")
+    ap.add_argument("--out-folder", default=None,
+                    help="write json/video/shots here instead of --folder (still reads source files from --folder)")
     args = ap.parse_args()
 
     # accept either a single fight folder or a parent containing several
@@ -726,7 +731,7 @@ def main():
         raise SystemExit(f"[v9] no fight folders found under {args.folder}")
     for fdr in folders:
         run(fdr, args.thr, args.cooldown, args.audio, args.top, args.video,
-            args.freeze, args.shots)
+            args.freeze, args.shots, out_folder=args.out_folder)
 
 
 if __name__ == "__main__":

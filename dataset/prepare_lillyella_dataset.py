@@ -60,9 +60,13 @@ def gladius_labels_to_global(round_id, fighter_id):
         part_name = lb["part"]
         if part_name not in parts:
             continue
-        offset = parts[part_name]["frame_offset"]
-        global_start = offset + lb["start"]
-        global_end   = offset + lb["end"]
+        # NOTE: lb["start"]/lb["end"] are already GLOBAL frame numbers for the
+        # whole round (verified empirically: part02 labels range ~1500-2998,
+        # matching part02's global_frame_range, not its local 0-1499 span).
+        # Do NOT add frame_offset here -- that double-shifts every part02+
+        # action forward by the preceding parts' frame_count.
+        global_start = lb["start"]
+        global_end   = lb["end"]
         actions.append({
             "fighter_id":    fighter_id,
             "fighter_type":  f"fighter_{fighter_id}",

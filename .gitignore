@@ -38,9 +38,10 @@ CLAUDE.md
 .cursor/
 .aider*
 
-# Markdown docs — only README.md is published to GitHub
+# Markdown docs — README.md and HANDOFF.md published to GitHub
 *.md
 !README.md
+!HANDOFF.md
 
 # Data archives / collaborator packages
 *.zip
